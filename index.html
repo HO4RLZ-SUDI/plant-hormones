@@ -1,0 +1,1926 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ฮอร์โมนพืช · Plant Hormones</title>
+<meta name="author" content="กลุ่มผู้จัดทำ 6 คน · สื่อการเรียนรู้ชีววิทยา">
+<meta name="description" content="เว็บนำเสนอฮอร์โมนพืช 5 ชนิด: ออกซิน จิบเบอเรลลิน ไซโทไคนิน กรดแอบไซซิก และเอทิลีน พร้อมผังต้นพืชแบบคลิกได้ ตารางเปรียบเทียบ และแบบทดสอบ">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=Inter:wght@300;400;500;600&family=Taviraj:ital,wght@1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fbfcfa;
+  --surface:#ffffff;
+  --surface-2:#f4f7f2;
+  --line:#e4eade;
+  --text:#1e2a22;
+  --muted:#657365;
+  --accent:#4a7a53;
+  --accent-soft:#e8f0e6;
+  --bad:#b3543f;
+  --bad-soft:#f7e9e5;
+  --trunk:#a08765;
+  --fruit:#c1704e;
+  --ink:#a5813a;
+  --ink-soft:#f3ecd9;
+  --shadow:0 1px 3px rgba(30,42,34,.07);
+  --shadow-hover:0 4px 14px rgba(30,42,34,.09);
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --radius:14px;
+  --font-display:"Taviraj",serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#11150f;
+    --surface:#171c15;
+    --surface-2:#1d231a;
+    --line:#2a3327;
+    --text:#e6ece2;
+    --muted:#9aa896;
+    --accent:#8fbf94;
+    --accent-soft:#1f2a1e;
+    --bad:#e0876f;
+    --bad-soft:#2a1e1a;
+    --trunk:#9c8465;
+    --fruit:#e08a63;
+    --ink:#d1ae66;
+    --ink-soft:#2b2515;
+    --shadow:0 1px 3px rgba(0,0,0,.35);
+    --shadow-hover:0 4px 14px rgba(0,0,0,.4);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#11150f;
+  --surface:#171c15;
+  --surface-2:#1d231a;
+  --line:#2a3327;
+  --text:#e6ece2;
+  --muted:#9aa896;
+  --accent:#8fbf94;
+  --accent-soft:#1f2a1e;
+  --bad:#e0876f;
+  --bad-soft:#2a1e1a;
+  --trunk:#9c8465;
+  --fruit:#e08a63;
+  --ink:#d1ae66;
+  --ink-soft:#2b2515;
+  --shadow:0 1px 3px rgba(0,0,0,.35);
+  --shadow-hover:0 4px 14px rgba(0,0,0,.4);
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:"IBM Plex Sans Thai","Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-weight:400;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+  transition:background-color .4s var(--ease), color .4s var(--ease);
+}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+a{color:inherit}
+
+/* ── header / nav (masthead) ──────────────────────────── */
+.site-header{
+  position:sticky;top:0;z-index:20;
+  background:var(--bg);
+  border-bottom:1px solid var(--line);
+  transition:background-color .4s var(--ease), border-color .4s var(--ease);
+}
+.header-inner{
+  display:flex;align-items:center;gap:22px;
+  padding:13px 24px;
+}
+.brand{
+  display:flex;align-items:center;gap:11px;
+  text-decoration:none;color:var(--text);flex:none;
+  border-radius:4px;
+}
+.brand:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.brand-icon{
+  width:20px;height:20px;flex:none;color:var(--accent);
+  display:grid;place-items:center;
+  transition:color .3s var(--ease);
+}
+.brand-icon svg{width:20px;height:20px}
+.brand-text{display:flex;flex-direction:column;line-height:1.3}
+.brand-text strong{font-size:.98rem;font-weight:600}
+.brand-text span{font-family:"Inter",sans-serif;font-size:.68rem;color:var(--muted);letter-spacing:.04em}
+
+.nav-divider{width:1px;align-self:stretch;background:var(--line);flex:none;margin:6px 0}
+
+.site-nav{
+  display:flex;gap:20px;flex:1;min-width:0;align-items:center;
+  overflow-x:auto;scrollbar-width:none;
+}
+.site-nav::-webkit-scrollbar{display:none}
+.nav-btn{
+  position:relative;
+  display:flex;align-items:center;gap:7px;flex:none;
+  padding:8px 1px 10px;
+  font-size:.76rem;font-weight:500;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.05em;
+  text-decoration:none;white-space:nowrap;
+  transition:color .3s var(--ease);
+}
+.nav-btn svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none;opacity:.8}
+.nav-btn::after{
+  content:"";position:absolute;left:1px;right:1px;bottom:2px;height:1.5px;
+  background:var(--ink);transform:scaleX(0);transform-origin:left;
+  transition:transform .4s var(--ease);
+}
+.nav-btn:hover{color:var(--text)}
+.nav-btn:hover::after{transform:scaleX(1)}
+.nav-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.nav-btn.is-active{color:var(--text)}
+.nav-btn.is-active::after{transform:scaleX(1);background:var(--accent)}
+
+.theme-btn{
+  appearance:none;border:1px solid var(--line);background:none;
+  width:32px;height:32px;border-radius:50%;flex:none;cursor:pointer;
+  display:grid;place-items:center;color:var(--muted);
+  transition:color .3s var(--ease), border-color .3s var(--ease), transform .4s var(--ease);
+}
+.theme-btn:hover{color:var(--ink);border-color:color-mix(in srgb, var(--ink) 40%, var(--line))}
+.theme-btn:active{transform:scale(.9)}
+.theme-btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+
+@media (max-width:720px){
+  .header-inner{flex-wrap:wrap;padding:12px 20px;gap:14px}
+  .brand{order:1}
+  .theme-btn{order:2;margin-left:auto}
+  .nav-divider{display:none}
+  .site-nav{order:3;flex-basis:100%;gap:18px;padding-top:2px}
+  .nav-btn span{display:none}
+  .nav-btn{padding:8px 3px 10px}
+}
+
+/* ── views ─────────────────────────────────────────── */
+.stage{position:relative;min-height:calc(100vh - 68px)}
+.view{
+  opacity:0;
+  transform:translateY(8px);
+  transition:opacity .2s var(--ease), transform .2s var(--ease);
+  pointer-events:none;
+  position:absolute;
+  inset:0 0 auto 0;
+}
+.view.is-active{
+  opacity:1;
+  transform:none;
+  pointer-events:auto;
+  position:relative;
+}
+.view.is-leaving{opacity:0;transform:translateY(-10px)}
+
+.view-head{padding:clamp(44px,9vh,72px) 0 clamp(32px,5vh,44px)}
+.view-head.is-hero{padding-top:clamp(56px,11vh,96px)}
+.eyebrow{
+  font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--accent);font-weight:500;margin:0 0 18px;
+}
+h1{
+  font-size:clamp(2.1rem,5.4vw,3.4rem);
+  line-height:1.25;font-weight:600;margin:0 0 20px;letter-spacing:-.01em;
+}
+.view-head h2{
+  font-size:clamp(1.6rem,3.6vw,2.2rem);font-weight:600;margin:0 0 12px;letter-spacing:-.01em;
+}
+.lede,.view-sub{
+  font-size:clamp(1rem,2.2vw,1.12rem);
+  color:var(--muted);max-width:56ch;margin:0;font-weight:300;
+}
+.view-sub{font-size:.98rem}
+
+.hero-tagline{
+  font-size:clamp(1.05rem,2.6vw,1.28rem);font-weight:500;color:var(--text);
+  line-height:1.5;margin:0 0 14px;max-width:32ch;
+}
+.hero-actions{margin-top:32px;display:flex;flex-wrap:wrap;gap:12px}
+.hero-cta{
+  appearance:none;border:0;cursor:pointer;text-decoration:none;
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--accent);color:#fff;
+  padding:13px 24px;border-radius:999px;
+  font:inherit;font-size:.94rem;font-weight:500;
+  transition:transform .25s var(--ease), background-color .3s var(--ease), border-color .3s var(--ease);
+}
+.hero-cta:hover{transform:translateX(2px)}
+.hero-cta:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.hero-cta svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.hero-cta--ghost{
+  background:none;border:1px solid var(--line);color:var(--text);
+}
+.hero-cta--ghost:hover{border-color:color-mix(in srgb, var(--accent) 40%, var(--line))}
+
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:32px;align-items:center}
+.hero-visual{position:relative;display:flex;align-items:center;justify-content:center;min-height:260px}
+.hero-visual::before{
+  content:"";position:absolute;width:230px;height:230px;border-radius:50%;
+  background:radial-gradient(circle, color-mix(in srgb, var(--accent) 26%, transparent) 0%, transparent 72%);
+}
+.hero-mark{position:relative;width:120px;height:120px;color:var(--accent);animation:hero-float 6s ease-in-out infinite}
+.hero-mark svg{width:100%;height:100%}
+.hero-dot{position:absolute;border-radius:50%;animation:hero-float 5.5s ease-in-out infinite}
+.hero-dot--fruit{width:15px;height:15px;background:var(--fruit);top:26%;right:24%;animation-delay:.5s}
+.hero-dot--ink{width:11px;height:11px;background:var(--ink);bottom:24%;left:26%;animation-delay:1.3s}
+@keyframes hero-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+/* ── home: supporting sections (glance + learning path) ───── */
+.home-section{margin-top:clamp(56px,10vh,96px)}
+.home-section .eyebrow{margin-bottom:10px}
+.home-section h2{font-size:clamp(1.4rem,3vw,1.8rem);font-weight:600;margin:0 0 10px;letter-spacing:-.01em}
+.home-section .view-sub{margin-bottom:28px}
+
+.glance-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.glance-card{
+  display:flex;flex-direction:column;align-items:flex-start;gap:12px;
+  padding:18px 16px;border:1px solid var(--line);border-radius:var(--radius);
+  background:var(--surface);color:var(--text);text-decoration:none;
+  transition:border-color .25s var(--ease), transform .25s var(--ease), box-shadow .25s var(--ease);
+}
+.glance-card:hover{
+  border-color:color-mix(in srgb, var(--accent) 38%, var(--line));
+  transform:translateY(-3px);box-shadow:var(--shadow);
+}
+.glance-card:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.glance-icon{
+  width:38px;height:38px;flex:none;border-radius:11px;
+  background:var(--accent-soft);color:var(--accent);
+  display:grid;place-items:center;
+}
+.glance-icon svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.glance-card strong{font-size:.98rem;font-weight:600;display:block}
+.glance-card .glance-en{
+  display:block;font-family:"Inter",sans-serif;font-size:.7rem;font-weight:400;
+  letter-spacing:.05em;color:var(--muted);margin-top:2px;
+}
+.glance-card p{margin:6px 0 0;color:var(--muted);font-size:.86rem;font-weight:300;line-height:1.5}
+
+.path-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.path-step{
+  display:block;padding:20px 18px;border:1px solid var(--line);border-radius:var(--radius);
+  background:var(--surface);color:var(--text);text-decoration:none;
+  transition:border-color .25s var(--ease), transform .25s var(--ease);
+}
+.path-step:hover{border-color:color-mix(in srgb, var(--accent) 38%, var(--line));transform:translateY(-3px)}
+.path-step:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.path-num{
+  display:block;font-family:var(--font-display);font-style:italic;font-weight:500;
+  font-size:1.3rem;color:var(--ink);opacity:.75;margin-bottom:10px;
+}
+.path-step strong{display:block;font-size:1rem;font-weight:600;margin-bottom:6px}
+.path-step p{margin:0;color:var(--muted);font-size:.86rem;font-weight:300;line-height:1.55}
+
+@media (max-width:1023px){
+  .glance-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:767px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-visual{min-height:200px;margin-top:4px}
+  .hero-visual::before{width:180px;height:180px}
+  .hero-mark{width:92px;height:92px}
+  .home-section{margin-top:48px}
+  .glance-grid{grid-template-columns:repeat(2,1fr)}
+  .path-grid{grid-template-columns:1fr;gap:12px}
+}
+@media (max-width:480px){
+  .hero-actions{flex-direction:column;align-items:stretch}
+  .hero-cta{justify-content:center}
+  .home-section{margin-top:40px}
+  .glance-card{padding:16px 14px}
+  .path-step{padding:18px 16px}
+}
+
+
+/* ── skip link (a11y) ──────────────────────────────────── */
+.skip-link{
+  position:absolute;left:-9999px;top:0;z-index:60;
+  background:var(--accent);color:#fff;text-decoration:none;
+  padding:11px 20px;border-radius:0 0 10px 0;
+  font-size:.9rem;font-weight:500;
+}
+.skip-link:focus{left:0}
+.view:focus{outline:none}
+
+/* ── team / ผู้จัดทำ ───────────────────────────────────── */
+.team-section{padding-bottom:clamp(56px,10vh,96px)}
+
+.project-meta{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;margin:0 0 clamp(28px,5vh,40px);
+}
+.project-meta > div{background:var(--surface);padding:16px 18px}
+.project-meta dt{
+  font-family:"Inter",sans-serif;font-size:.67rem;font-weight:500;
+  letter-spacing:.15em;text-transform:uppercase;color:var(--muted);
+  margin:0 0 6px;
+}
+.project-meta dd{margin:0;font-size:.95rem;font-weight:500;line-height:1.5}
+
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.member-card{
+  display:flex;align-items:center;gap:15px;
+  padding:18px;border:1px solid var(--line);border-radius:var(--radius);
+  background:var(--surface);
+  transition:border-color .25s var(--ease), transform .25s var(--ease), box-shadow .25s var(--ease);
+}
+.member-card:hover{
+  border-color:color-mix(in srgb, var(--accent) 38%, var(--line));
+  transform:translateY(-3px);box-shadow:var(--shadow);
+}
+.member-no{
+  width:44px;height:44px;flex:none;border-radius:50%;
+  background:var(--accent-soft);color:var(--accent);
+  display:grid;place-items:center;
+  font-family:var(--font-display);font-style:italic;font-weight:500;font-size:1.05rem;
+}
+.member-name{display:block;font-size:.97rem;font-weight:600;line-height:1.45}
+.member-role{
+  display:block;margin-top:3px;color:var(--muted);
+  font-family:"Inter",sans-serif;font-size:.72rem;letter-spacing:.06em;
+}
+
+.team-strip{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.team-chip{
+  display:inline-flex;align-items:baseline;gap:8px;
+  padding:8px 15px;border:1px solid var(--line);border-radius:999px;
+  background:var(--surface);font-size:.87rem;
+}
+.team-chip i{
+  font-style:normal;font-family:"Inter",sans-serif;
+  font-size:.7rem;color:var(--muted);letter-spacing:.05em;
+}
+
+.ref-block{margin-top:clamp(40px,7vh,64px)}
+.ref-block h3{font-size:1.1rem;font-weight:600;margin:0 0 6px}
+.ref-block .view-sub{margin-bottom:20px}
+.ref-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.ref-list li{
+  padding:14px 18px;background:var(--surface);
+  border:1px solid var(--line);border-left:2px solid var(--ink);
+  border-radius:0 var(--radius) var(--radius) 0;
+  font-size:.89rem;font-weight:300;line-height:1.65;color:var(--muted);
+}
+.ref-list li strong{color:var(--text);font-weight:500}
+
+@media (max-width:900px){.team-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:767px){.project-meta{grid-template-columns:1fr}}
+@media (max-width:560px){.team-grid{grid-template-columns:1fr}}
+
+/* ── interactive plant diagram ─────────────────────────── */
+.diagram-section{padding-bottom:clamp(64px,12vh,120px)}
+
+.plant-figure{position:relative;width:100%;max-width:380px;aspect-ratio:300/420;margin:0 auto;user-select:none}
+.plant-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.plant-svg .ground{stroke:var(--line);stroke-width:1.5;stroke-dasharray:4 5}
+.plant-svg .soil{fill:var(--surface-2)}
+.plant-svg .trunk,.plant-svg .branch{stroke:var(--trunk);stroke-width:4;stroke-linecap:round;fill:none}
+.plant-svg .root{stroke:var(--muted);stroke-width:3;stroke-linecap:round;fill:none}
+.plant-svg .root-tip{fill:var(--surface);stroke:var(--muted);stroke-width:2.5}
+.plant-svg .leaf{fill:var(--accent);opacity:.85}
+.plant-svg .fruit-stem{stroke:var(--trunk);stroke-width:2;stroke-linecap:round;fill:none}
+.plant-svg .fruit-calyx{stroke:var(--trunk);stroke-width:1.8;stroke-linecap:round;fill:none}
+.plant-svg .fruit{fill:var(--fruit)}
+.plant-svg .fruit-shade{pointer-events:none}
+
+/* entrance: roots/trunk/branches draw out stroke by stroke (a real
+   growing line, not a pop), leaves and fruit unfurl afterwards from the
+   point where they attach, each stage waiting for the last to land */
+@keyframes draw-line{to{stroke-dashoffset:0}}
+@keyframes fade-in{from{opacity:0}to{opacity:1}}
+@keyframes grow-out{from{opacity:0;transform:scale(0)}to{opacity:1;transform:scale(1)}}
+@keyframes grow-out-85{from{opacity:0;transform:scale(0)}to{opacity:.85;transform:scale(1)}}
+.plant-svg .root,.plant-svg .trunk,.plant-svg .branch,.plant-svg .fruit-stem{
+  stroke-dasharray:1;stroke-dashoffset:1;
+  animation:draw-line .55s var(--ease) forwards;
+}
+.plant-svg .root-tip,.plant-svg .fruit-calyx{
+  opacity:0;animation:fade-in .3s var(--ease) forwards;
+}
+.plant-svg .leaf{
+  transform-box:fill-box;transform-origin:0% 50%;
+  opacity:0;transform:scale(0);
+  animation:grow-out-85 .5s var(--ease) forwards;
+}
+.plant-svg .fruit,.plant-svg .fruit-shade{
+  transform-box:fill-box;transform-origin:34% 30%;
+  opacity:0;transform:scale(0);
+  animation:grow-out .5s var(--ease) forwards;
+}
+
+.p-markers{position:absolute;inset:0}
+.p-marker{
+  position:absolute;left:var(--x);top:var(--y);transform:translate(-50%,-50%);
+  appearance:none;border:0;background:none;padding:6px;margin:-6px;cursor:pointer;
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+}
+.p-dot{
+  position:relative;width:26px;height:26px;border-radius:50%;
+  background:var(--surface);border:2px solid var(--accent);color:var(--accent);
+  display:grid;place-items:center;font:600 .7rem/1 "Inter",sans-serif;
+  box-shadow:var(--shadow);
+  transition:background-color .3s var(--ease),color .3s var(--ease),transform .3s var(--ease),border-color .3s var(--ease);
+}
+.p-dot::after{
+  content:"";position:absolute;inset:-7px;border-radius:50%;border:1.5px solid var(--accent);
+  opacity:0;animation:ping 2.2s var(--ease) 2;
+}
+@keyframes ping{
+  0%{opacity:.5;transform:scale(.7)}
+  70%,100%{opacity:0;transform:scale(1.3)}
+}
+.p-marker[data-part="flower"] .p-dot{border-color:var(--fruit);color:var(--fruit)}
+.p-marker[data-part="flower"] .p-dot::after{border-color:var(--fruit)}
+.p-marker:hover .p-dot{transform:scale(1.1)}
+.p-marker:focus-visible .p-dot{outline:2px solid var(--accent);outline-offset:3px}
+.p-marker.is-active .p-dot{background:var(--accent);border-color:var(--accent);color:#fff}
+.p-marker[data-part="flower"].is-active .p-dot{background:var(--fruit);border-color:var(--fruit)}
+.p-tag{
+  font-size:.72rem;font-weight:500;color:var(--muted);
+  background:var(--surface);border:1px solid var(--line);
+  padding:3px 9px;border-radius:999px;white-space:nowrap;box-shadow:var(--shadow);
+  transition:color .3s var(--ease),border-color .3s var(--ease);
+}
+.p-marker.is-active .p-tag{color:var(--accent);border-color:color-mix(in srgb, var(--accent) 40%, var(--line))}
+.p-marker[data-part="flower"].is-active .p-tag{color:var(--fruit)}
+
+.panel-label{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:500;margin:0 0 14px}
+
+/* ── plant popup (tap a marker) ───────────────────────── */
+.plant-popup-scrim{position:fixed;inset:0;z-index:39;background:transparent}
+.plant-popup{
+  position:absolute;z-index:40;width:min(320px,92vw);
+  max-height:min(70vh,480px);overflow-y:auto;overscroll-behavior:contain;
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:var(--shadow-hover);padding:20px 44px 18px 20px;
+  opacity:0;pointer-events:none;
+  transition:opacity .18s var(--ease);
+  scrollbar-width:thin;scrollbar-color:var(--line) transparent;
+}
+.plant-popup.is-open{opacity:1;pointer-events:auto}
+.plant-popup::-webkit-scrollbar{width:6px}
+.plant-popup::-webkit-scrollbar-track{background:transparent}
+.plant-popup::-webkit-scrollbar-thumb{background:var(--line);border-radius:999px}
+.plant-popup::-webkit-scrollbar-thumb:hover{background:var(--muted)}
+.plant-popup::before{
+  content:"";position:absolute;width:14px;height:14px;
+  background:var(--surface);border:1px solid var(--line);
+  left:var(--arrow-left,20px);transform:translateX(-50%) rotate(45deg);
+}
+.plant-popup[data-arrow="top"]::before{top:-8px;border-right:none;border-bottom:none}
+.plant-popup[data-arrow="bottom"]::before{bottom:-8px;border-left:none;border-top:none}
+.plant-popup-close{
+  position:absolute;top:12px;right:12px;
+  width:28px;height:28px;flex:none;border-radius:50%;cursor:pointer;
+  border:1px solid var(--line);background:var(--surface);color:var(--muted);
+  display:grid;place-items:center;
+  transition:color .25s var(--ease),border-color .25s var(--ease);
+}
+.plant-popup-close:hover{color:var(--text);border-color:color-mix(in srgb, var(--accent) 35%, var(--line))}
+.plant-popup-close svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
+.pp-eyebrow{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 6px}
+.pp-title{font-size:1.22rem;font-weight:600;margin:0 0 10px;line-height:1.35}
+.pp-intro{color:var(--muted);font-weight:300;font-size:.88rem;line-height:1.6;margin:0 0 16px}
+.pp-list{display:flex;flex-direction:column;gap:8px}
+.pp-item{
+  appearance:none;width:100%;text-align:start;font:inherit;color:inherit;cursor:pointer;
+  display:flex;align-items:center;gap:12px;
+  border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:10px 12px;
+  transition:border-color .25s var(--ease),background-color .25s var(--ease);
+}
+.pp-item:hover{border-color:color-mix(in srgb, var(--accent) 35%, var(--line));background:var(--surface-2)}
+.pp-item-icon{width:32px;height:32px;flex:none;border-radius:9px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center}
+.pp-item-icon svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.pp-item-name{flex:1;min-width:0;font-weight:600;font-size:.92rem;display:flex;flex-direction:column;line-height:1.35}
+.pp-item-name small{font-family:"Inter",sans-serif;font-weight:400;font-size:.74rem;color:var(--muted)}
+.pp-item-go{flex:none;font-size:.78rem;color:var(--accent);font-weight:500;display:inline-flex;align-items:center;gap:4px;white-space:nowrap}
+.pp-item-go svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2}
+
+@media (max-width:560px){.plant-figure{max-width:280px}}
+
+/* ── auxin lab (interactive dose-response) ────────────── */
+.lab-section{padding-bottom:clamp(64px,12vh,120px)}
+.lab-panel{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:var(--shadow);padding:clamp(24px,4vw,36px);
+  display:grid;grid-template-columns:minmax(240px,1.15fr) minmax(240px,1fr);
+  gap:clamp(28px,5vw,48px);align-items:start;
+}
+@media (max-width:760px){.lab-panel{grid-template-columns:1fr}}
+.lab-chart{width:100%;height:auto;overflow:visible;display:block}
+.lab-chart text{font-family:"Inter",sans-serif}
+.lab-axis{stroke:var(--line);stroke-width:1}
+.lab-baseline{stroke:var(--muted);stroke-width:1;stroke-dasharray:3 4;opacity:.6}
+.lab-tick{fill:var(--muted)}
+.lab-shoot-line{stroke:var(--accent);stroke-width:2.4;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.lab-root-line{stroke:var(--trunk);stroke-width:2.4;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.lab-marker-line{stroke:var(--muted);stroke-width:1;stroke-dasharray:2 3;opacity:.55}
+.lab-dot-shoot{fill:var(--accent);stroke:var(--surface);stroke-width:2}
+.lab-dot-root{fill:var(--trunk);stroke:var(--surface);stroke-width:2}
+.lab-dot-shoot,.lab-dot-root,.lab-marker-line{transition:cx .12s var(--ease),cy .12s var(--ease),x1 .12s var(--ease),x2 .12s var(--ease)}
+.lab-legend{display:flex;gap:18px;margin-top:14px;font-size:.82rem;color:var(--muted);flex-wrap:wrap}
+.lab-legend-item{display:inline-flex;align-items:center;gap:7px}
+.lab-legend-item .dot{width:10px;height:10px;border-radius:50%;display:inline-block;flex:none}
+.lab-legend-item .dot.shoot{background:var(--accent)}
+.lab-legend-item .dot.root{background:var(--trunk)}
+.lab-slider-label{display:block;font-size:.86rem;color:var(--muted);margin-bottom:12px}
+.lab-slider-label strong{color:var(--text);font-weight:600}
+.lab-slider{
+  width:100%;appearance:none;-webkit-appearance:none;height:6px;border-radius:999px;
+  background:linear-gradient(to right, var(--trunk), var(--accent));
+  outline:none;cursor:pointer;margin:0 0 24px;
+}
+.lab-slider::-webkit-slider-thumb{
+  appearance:none;-webkit-appearance:none;width:20px;height:20px;border-radius:50%;
+  background:var(--surface);border:3px solid var(--accent);box-shadow:var(--shadow);cursor:pointer;
+  transition:transform .2s var(--ease);
+}
+.lab-slider::-webkit-slider-thumb:hover{transform:scale(1.12)}
+.lab-slider::-moz-range-thumb{
+  width:14px;height:14px;border-radius:50%;
+  background:var(--surface);border:3px solid var(--accent);box-shadow:var(--shadow);cursor:pointer;
+}
+.lab-slider::-moz-range-track{height:6px;border-radius:999px;background:linear-gradient(to right, var(--trunk), var(--accent))}
+.lab-readouts{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px}
+@media (max-width:520px){.lab-readouts{grid-template-columns:1fr}}
+.lab-stat{border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:12px;padding:14px 16px}
+.lab-stat.is-root{border-left-color:var(--trunk)}
+.lab-stat .lab-stat-label{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
+.lab-stat .lab-stat-value{font-size:1.3rem;font-weight:700;margin:0 0 3px}
+.lab-stat .lab-stat-value small{font-family:"Inter",sans-serif;font-size:.72rem;font-weight:500;color:var(--muted);margin-left:4px}
+.lab-stat p{margin:0;font-size:.82rem;color:var(--muted);font-weight:300;line-height:1.55}
+.lab-insight{background:var(--surface-2);border:1px solid var(--line);border-radius:14px;padding:16px 18px;font-size:.9rem;color:var(--muted);font-weight:300;line-height:1.7}
+.lab-insight b{color:var(--text);font-weight:500}
+
+/* ── hormone grid ──────────────────────────────────── */
+.filter-bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.chip{
+  appearance:none;border:1px solid var(--line);background:var(--surface);
+  padding:8px 16px;border-radius:999px;cursor:pointer;
+  font-size:.84rem;font-weight:500;color:var(--muted);
+  display:inline-flex;align-items:center;gap:6px;
+  transition:color .3s var(--ease), border-color .3s var(--ease), background-color .3s var(--ease);
+}
+.chip span{font-family:"Inter",sans-serif;font-weight:400;opacity:.7;font-size:.8em}
+.chip:hover{color:var(--text);border-color:color-mix(in srgb, var(--accent) 30%, var(--line))}
+.chip.is-active{background:var(--accent);border-color:var(--accent);color:#fff}
+.chip.is-active span{opacity:.85}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:20px;
+  padding-bottom:clamp(64px,12vh,120px);
+}
+.card{
+  position:relative;
+  appearance:none;
+  text-align:start;
+  font:inherit;color:inherit;
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:30px 28px 28px;
+  cursor:pointer;
+  box-shadow:var(--shadow);
+  display:flex;flex-direction:column;gap:14px;
+  transition:transform .25s var(--ease), box-shadow .25s var(--ease),
+             border-color .25s var(--ease), background-color .35s var(--ease);
+  opacity:0;
+  animation:rise .4s var(--ease) forwards;
+}
+.card-index{
+  position:absolute;top:26px;right:26px;
+  font-family:var(--font-display);font-style:italic;font-weight:500;
+  font-size:.92rem;color:var(--ink);opacity:.65;
+}
+.card.is-hidden{display:none}
+@keyframes rise{to{opacity:1;translate:none}}
+.card{translate:0 16px}
+.card:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--shadow-hover);
+  border-color:color-mix(in srgb, var(--accent) 38%, var(--line));
+}
+.card:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.card:active{transform:translateY(-1px)}
+.icon{
+  width:46px;height:46px;border-radius:13px;
+  background:var(--accent-soft);
+  color:var(--accent);
+  display:grid;place-items:center;
+  transition:background-color .3s var(--ease), transform .3s var(--ease);
+}
+.card:hover .icon{transform:scale(1.05)}
+.icon svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font-size:1.22rem;font-weight:600;margin:0;line-height:1.4}
+.card .en{
+  display:block;font-family:"Inter",sans-serif;font-size:.8rem;font-weight:400;
+  letter-spacing:.06em;color:var(--muted);margin-top:3px;
+}
+.card p{margin:0;color:var(--muted);font-size:.94rem;font-weight:300;line-height:1.7}
+.card .go{
+  margin-top:16px;padding-top:14px;
+  border-top:1px solid var(--line);
+  font-size:.86rem;color:var(--text);font-weight:500;
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  transition:border-color .35s var(--ease);
+}
+.card:hover .go{border-color:color-mix(in srgb, var(--accent) 30%, var(--line))}
+.go-badge{
+  width:34px;height:34px;flex:none;border-radius:50%;
+  background:var(--accent-soft);color:var(--accent);
+  display:grid;place-items:center;
+  transition:background-color .3s var(--ease), color .3s var(--ease), transform .25s var(--ease);
+}
+.go-badge svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;display:block}
+.card:hover .go-badge{
+  background:var(--accent);color:#fff;
+  transform:translateX(3px);
+}
+.card:active .go-badge{transform:translateX(3px) scale(.94)}
+
+/* ── comparison table ──────────────────────────────── */
+/* the bottom spacing lives outside the scroller, so the scrollbar stays
+   attached to the table instead of floating 120px beneath it */
+.table-scroll{overflow-x:auto;padding-bottom:2px;margin-bottom:clamp(64px,12vh,120px)}
+.compare-table{
+  width:100%;min-width:760px;border-collapse:collapse;
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+}
+.compare-table th,.compare-table td{
+  text-align:left;padding:16px 18px;vertical-align:top;
+  border-bottom:1px solid var(--line);font-size:.9rem;
+}
+.compare-table thead th{
+  font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;
+  color:var(--muted);background:var(--surface-2);white-space:nowrap;
+}
+.compare-table tbody tr:last-child td{border-bottom:0}
+.compare-table tbody tr{transition:background-color .3s var(--ease)}
+.compare-table tbody tr:hover{background:var(--surface-2)}
+.ct-name{display:flex;align-items:center;gap:12px;white-space:nowrap}
+.ct-name .icon{width:34px;height:34px;border-radius:10px}
+.ct-name .icon svg{width:18px;height:18px}
+.ct-name strong{font-weight:600;font-size:.94rem;display:block}
+.ct-name small{font-family:"Inter",sans-serif;color:var(--muted);font-size:.74rem}
+.pill{
+  display:inline-block;padding:4px 11px;border-radius:999px;
+  font-size:.76rem;font-weight:500;white-space:nowrap;
+}
+.pill.promoter{background:var(--accent-soft);color:var(--accent)}
+.pill.stress{background:var(--bad-soft);color:var(--bad)}
+.compare-table td.ct-desc{color:var(--muted);font-weight:300;line-height:1.6;min-width:200px}
+.ct-link{
+  appearance:none;border:0;background:none;font:inherit;cursor:pointer;
+  color:var(--accent);font-weight:500;font-size:.86rem;white-space:nowrap;
+  display:inline-flex;align-items:center;gap:4px;
+}
+.ct-link svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2;transition:transform .3s var(--ease)}
+.ct-link:hover svg{transform:translateX(3px)}
+
+/* stacked cards instead of a wide table below the point it can fit */
+@media (max-width:680px){
+  .table-scroll{overflow-x:visible}
+  .compare-table{min-width:0;border:0;background:none;border-radius:0}
+  .compare-table thead{display:none}
+  .compare-table tbody{display:flex;flex-direction:column;gap:14px}
+  .compare-table tr{
+    display:block;background:var(--surface);
+    border:1px solid var(--line);border-radius:var(--radius);
+  }
+  .compare-table tr:hover{background:var(--surface)}
+  .compare-table td{
+    display:flex;align-items:flex-start;gap:14px;
+    padding:12px 16px;border-bottom:1px solid var(--line);
+    white-space:normal;
+  }
+  .compare-table tr td:last-child{border-bottom:0}
+  .compare-table td[data-label]::before{
+    content:attr(data-label);flex:none;width:88px;padding-top:1px;
+    font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);font-weight:500;
+  }
+  .compare-table td.ct-desc{min-width:0}
+}
+
+/* ── quiz ──────────────────────────────────────────── */
+.quiz-wrap{max-width:640px;padding-bottom:clamp(64px,12vh,120px)}
+.quiz-card{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:clamp(28px,5vw,40px);box-shadow:var(--shadow);
+  transition:opacity .25s var(--ease), transform .25s var(--ease);
+}
+.quiz-card.is-updating{opacity:0;transform:translateY(6px)}
+.quiz-progress-track{height:5px;border-radius:999px;background:var(--surface-2);overflow:hidden;margin-bottom:10px}
+.quiz-progress-bar{height:100%;background:var(--accent);border-radius:999px;transition:width .4s var(--ease)}
+.quiz-meta{display:flex;justify-content:space-between;font-size:.78rem;color:var(--muted);margin-bottom:24px}
+.quiz-question{font-size:1.14rem;font-weight:600;line-height:1.55;margin:0 0 22px}
+.quiz-options{display:flex;flex-direction:column;gap:10px;margin-bottom:4px}
+.quiz-opt{
+  appearance:none;text-align:start;width:100%;
+  border:1px solid var(--line);background:var(--surface);
+  border-radius:12px;padding:13px 16px;font:inherit;font-size:.94rem;color:var(--text);
+  cursor:pointer;display:flex;align-items:center;gap:12px;
+  transition:border-color .25s var(--ease),background-color .25s var(--ease);
+}
+.quiz-opt:hover:not(:disabled){border-color:color-mix(in srgb, var(--accent) 35%, var(--line));background:var(--surface-2)}
+.quiz-opt:disabled{cursor:default}
+.quiz-opt .opt-mark{
+  width:22px;height:22px;flex:none;border-radius:50%;border:1.5px solid var(--line);
+  display:grid;place-items:center;color:transparent;
+  transition:border-color .25s var(--ease), background-color .25s var(--ease), color .25s var(--ease);
+}
+.quiz-opt .opt-mark svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.quiz-opt.is-correct{border-color:var(--accent);background:var(--accent-soft)}
+.quiz-opt.is-correct .opt-mark{border-color:var(--accent);background:var(--accent);color:#fff}
+.quiz-opt.is-wrong{border-color:var(--bad);background:var(--bad-soft)}
+.quiz-opt.is-wrong .opt-mark{border-color:var(--bad);background:var(--bad);color:#fff}
+.quiz-explain{
+  margin-top:18px;padding:15px 17px;border-radius:12px;
+  background:var(--surface-2);color:var(--muted);font-size:.88rem;font-weight:300;line-height:1.7;
+}
+.quiz-explain b{color:var(--text);font-weight:500}
+.quiz-next-row{display:flex;justify-content:flex-end;margin-top:20px}
+.quiz-next-btn{
+  appearance:none;border:0;background:var(--accent);color:#fff;
+  padding:11px 22px;border-radius:999px;font:inherit;font-size:.9rem;font-weight:500;cursor:pointer;
+  display:inline-flex;align-items:center;gap:8px;
+  transition:transform .2s var(--ease), background-color .3s var(--ease);
+}
+.quiz-next-btn:hover{transform:translateX(2px)}
+.quiz-next-btn svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2.2}
+.quiz-result{text-align:center;padding:12px 0;position:relative}
+.quiz-perfect-badge{width:44px;height:44px;margin:0 auto 6px;color:var(--ink);display:grid;place-items:center}
+.quiz-perfect-badge svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.confetti-piece{
+  position:absolute;top:-10px;width:7px;height:13px;border-radius:2px;opacity:.9;
+  transform:rotate(var(--rot,0deg));pointer-events:none;
+  animation:confetti-fall 1.3s ease-in forwards;
+}
+@keyframes confetti-fall{to{transform:translateY(220px) rotate(var(--rot,360deg));opacity:0}}
+.quiz-result .score{font-size:3rem;font-weight:700;color:var(--accent);line-height:1;margin:6px 0 4px}
+.quiz-result .score span{font-size:1.4rem;color:var(--muted);font-weight:400}
+.quiz-result p{color:var(--muted);font-weight:300;margin:0 0 26px}
+.quiz-result-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.quiz-retry-btn,.quiz-review-btn{
+  appearance:none;border-radius:999px;padding:11px 22px;font:inherit;font-size:.9rem;font-weight:500;cursor:pointer;
+  transition:transform .3s var(--ease), background-color .3s var(--ease), border-color .3s var(--ease);
+}
+.quiz-retry-btn{border:0;background:var(--accent);color:#fff}
+.quiz-retry-btn:hover{transform:translateY(-2px)}
+.quiz-review-btn{border:1px solid var(--line);background:none;color:var(--text);text-decoration:none;display:inline-flex;align-items:center}
+.quiz-review-btn:hover{border-color:color-mix(in srgb, var(--accent) 35%, var(--line));color:var(--accent)}
+
+/* ── detail ────────────────────────────────────────── */
+.detail-inner{padding:clamp(32px,6vh,56px) 0 clamp(72px,12vh,120px);max-width:760px}
+.back{
+  appearance:none;background:none;border:0;font:inherit;cursor:pointer;
+  color:var(--muted);font-size:.92rem;
+  display:inline-flex;align-items:center;gap:8px;
+  padding:9px 14px 9px 10px;margin:0 0 clamp(28px,5vh,48px) -10px;
+  border-radius:999px;
+  transition:color .3s var(--ease), background-color .3s var(--ease), gap .3s var(--ease);
+}
+.back:hover{color:var(--text);background:var(--surface-2);gap:12px}
+.back:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.back svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+
+.detail-head{display:flex;align-items:center;gap:18px;margin-bottom:12px}
+.detail-head .icon{width:58px;height:58px;border-radius:16px;flex:none}
+.detail-head .icon svg{width:30px;height:30px}
+.detail-title{font-size:clamp(1.8rem,4.6vw,2.6rem);font-weight:600;margin:0;line-height:1.3;letter-spacing:-.01em}
+.detail-en{
+  font-family:"Inter",sans-serif;color:var(--muted);
+  font-size:.92rem;letter-spacing:.06em;margin:2px 0 0;font-weight:400;
+}
+.detail-lede{
+  color:var(--muted);font-weight:300;font-size:1.04rem;
+  margin:0 0 clamp(36px,6vh,56px);max-width:56ch;
+}
+.rule{height:1px;background:var(--line);border:0;margin:0 0 clamp(32px,5vh,44px)}
+
+section.block{margin-bottom:clamp(38px,6vh,56px)}
+section.block:last-of-type{margin-bottom:0}
+.block-label{
+  font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);font-weight:500;margin:0 0 6px;
+}
+.block h3{font-size:1.18rem;font-weight:600;margin:0 0 16px;line-height:1.45}
+ul.points{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+ul.points li{
+  position:relative;padding-left:22px;color:var(--text);
+  font-weight:300;font-size:1rem;line-height:1.75;
+}
+ul.points li::before{
+  content:"";position:absolute;left:2px;top:.72em;
+  width:6px;height:6px;border-radius:50%;background:var(--accent);opacity:.55;
+}
+ul.points li b{font-weight:500;color:var(--text)}
+.note{
+  background:var(--surface-2);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:18px 20px;
+  color:var(--muted);
+  font-size:.94rem;font-weight:300;line-height:1.7;
+}
+.note b{color:var(--text);font-weight:500}
+
+.nextnav{
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  margin-top:clamp(48px,8vh,72px);padding-top:28px;border-top:1px solid var(--line);
+}
+.nextnav button{
+  appearance:none;background:none;border:0;font:inherit;cursor:pointer;
+  color:var(--muted);font-size:.92rem;padding:8px 12px;border-radius:10px;
+  transition:color .3s var(--ease), background-color .3s var(--ease);
+}
+.nextnav button:hover{color:var(--accent);background:var(--surface-2)}
+.nextnav button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.site-footer{
+  border-top:1px solid var(--line);
+  margin-top:clamp(32px,6vh,64px);
+  padding:30px 0 44px;color:var(--muted);
+  font-size:.84rem;font-weight:300;
+}
+.footer-inner{display:flex;flex-wrap:wrap;gap:14px 30px;justify-content:space-between;align-items:baseline}
+.footer-inner p{margin:0}
+.footer-inner strong{color:var(--text);font-weight:500}
+.footer-links{display:flex;flex-wrap:wrap;gap:20px}
+.footer-links a{
+  color:var(--muted);text-decoration:none;
+  transition:color .25s var(--ease);
+}
+.footer-links a:hover{color:var(--accent)}
+.footer-links a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+
+@media (max-width:560px){
+  .wrap{padding:0 20px}
+  .grid{grid-template-columns:1fr;gap:16px}
+  .card{padding:24px 22px}
+  .detail-head{gap:14px}
+  .quiz-result .score{font-size:2.4rem}
+}
+@media print{
+  .site-header,.skip-link,.theme-btn,.footer-links,.nextnav,.back,
+  .plant-popup,.plant-popup-scrim,.hero-actions,.filter-bar{display:none!important}
+  .view{
+    position:static!important;opacity:1!important;transform:none!important;
+    pointer-events:auto!important;break-after:page;
+  }
+  .view:last-of-type{break-after:auto}
+  body{background:#fff;color:#000}
+  .card,.glance-card,.path-step,.member-card,.ref-list li{break-inside:avoid}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .card{opacity:1;translate:none}
+  .card:hover{transform:none}
+}
+</style>
+</head>
+<body>
+<script>
+try{
+  var t = localStorage.getItem('ph-theme');
+  if(t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+}catch(e){}
+</script>
+
+<a class="skip-link" href="#main">ข้ามไปยังเนื้อหาหลัก</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#/" aria-label="กลับหน้าแรก">
+      <span class="brand-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20c8 0 14-5 16-16C11 4 5 9 4 20Z" fill="currentColor"/><path d="M4 20c2-6 6-10 12-13" stroke="var(--bg)" stroke-width="1.4" stroke-linecap="round" fill="none"/></svg></span>
+      <span class="brand-text"><strong>ฮอร์โมนพืช</strong><span>PLANT PHYSIOLOGY</span></span>
+    </a>
+    <span class="nav-divider" aria-hidden="true"></span>
+    <nav class="site-nav" id="siteNav" aria-label="เมนูหลัก">
+      <a class="nav-btn" href="#/diagram" data-nav="diagram"><svg viewBox="0 0 24 24"><path d="M12 22V12"/><path d="M12 12C12 7 8 5 4 5c0 5 3 8 8 7Z"/><path d="M12 12c0-4 3-6 7-6 0 4-2 7-7 6Z"/></svg><span>ผังต้นพืช</span></a>
+      <a class="nav-btn" href="#/hormones" data-nav="grid"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="1.6"/><rect x="13" y="3" width="8" height="8" rx="1.6"/><rect x="3" y="13" width="8" height="8" rx="1.6"/><rect x="13" y="13" width="8" height="8" rx="1.6"/></svg><span>ฮอร์โมนทั้งหมด</span></a>
+      <a class="nav-btn" href="#/compare" data-nav="compare"><svg viewBox="0 0 24 24"><path d="M4 21V10"/><path d="M12 21V4"/><path d="M20 21v-7"/></svg><span>เปรียบเทียบ</span></a>
+      <a class="nav-btn" href="#/lab" data-nav="lab"><svg viewBox="0 0 24 24"><path d="M9 3h6"/><path d="M10 3v6.7L4.6 18.4A2 2 0 0 0 6.3 21.5h11.4a2 2 0 0 0 1.7-3.1L14 9.7V3"/><path d="M7.3 15h9.4"/></svg><span>ห้องทดลอง</span></a>
+      <a class="nav-btn" href="#/quiz" data-nav="quiz"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.3 9.3a2.7 2.7 0 1 1 3.9 2.4c-.9.5-1.2 1-1.2 2"/><path d="M12 17h.01"/></svg><span>แบบทดสอบ</span></a>
+      <a class="nav-btn" href="#/team" data-nav="team"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-5.4 6-5.4s6 2.1 6 5.4"/><path d="M16.2 5.2a3.2 3.2 0 0 1 0 6"/><path d="M17.5 14.9c2.1.6 3.5 2.4 3.5 5.1"/></svg><span>ผู้จัดทำ</span></a>
+    </nav>
+    <button class="theme-btn" id="themeBtn" type="button" aria-label="สลับโหมดมืด/สว่าง">
+      <svg id="themeIcon" viewBox="0 0 24 24"></svg>
+    </button>
+  </div>
+</header>
+
+<main class="stage" id="main">
+  <!-- HOME: landing -->
+  <div class="view is-active" id="view-home">
+    <div class="wrap">
+      <div class="hero-grid">
+        <header class="view-head is-hero">
+          <p class="eyebrow">Plant Physiology</p>
+          <h1>ฮอร์โมนพืช</h1>
+          <p class="hero-tagline">เข้าใจกลไกการเจริญเติบโตของพืช<br>ผ่านการเรียนรู้แบบ Interactive</p>
+          <p class="lede">เรียนรู้ฮอร์โมนพืชทั้ง 5 ชนิด ผ่านแผนภาพ การทดลองจำลอง และแบบทดสอบ</p>
+          <div class="hero-actions">
+            <a class="hero-cta" href="#/diagram">เริ่มเรียนรู้ <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13"/><path d="m12.5 6 6 6-6 6"/></svg></a>
+            <a class="hero-cta hero-cta--ghost" href="#/hormones">ดูฮอร์โมนทั้งหมด</a>
+          </div>
+        </header>
+        <div class="hero-visual" aria-hidden="true">
+          <span class="hero-dot hero-dot--fruit"></span>
+          <span class="hero-dot hero-dot--ink"></span>
+          <span class="hero-mark">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 20c8 0 14-5 16-16C11 4 5 9 4 20Z" fill="currentColor"/>
+              <path d="M4 20c2-6 6-10 12-13" stroke="var(--bg)" stroke-width="1.1" stroke-linecap="round" fill="none"/>
+            </svg>
+          </span>
+        </div>
+      </div>
+
+      <section class="home-section" aria-labelledby="glanceHeading">
+        <p class="eyebrow">Overview</p>
+        <h2 id="glanceHeading">5 ฮอร์โมนหลัก</h2>
+        <p class="view-sub">ทำความรู้จักบทบาทสำคัญของฮอร์โมนพืชทั้ง 5 ชนิด</p>
+        <div class="glance-grid">
+          <a class="glance-card" href="#/auxin">
+            <span class="glance-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21V8"/><path d="M12 12c0-3.3 2.5-6 5.5-6.5C17.5 9 15 12 12 12Z"/><path d="M12 16c-2.6 0-4.8-2-5-4.6 2.6-.2 4.8 1.7 5 4.6Z"/><path d="M9 4.5 12 2l3 2.5"/></svg></span>
+            <strong>ออกซิน<span class="glance-en">Auxin</span></strong>
+            <p>ยืดเซลล์</p>
+          </a>
+          <a class="glance-card" href="#/gibberellin">
+            <span class="glance-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 22V3"/><path d="M9 3h6"/><path d="M8.5 8.5h7"/><path d="M8.5 14h7"/><path d="M5 19.5c1.8-.6 3.1-1.7 4-3.3"/><path d="M19 19.5c-1.8-.6-3.1-1.7-4-3.3"/></svg></span>
+            <strong>จิบเบอเรลลิน<span class="glance-en">Gibberellin</span></strong>
+            <p>ลำต้นยืด / เมล็ดงอก</p>
+          </a>
+          <a class="glance-card" href="#/cytokinin">
+            <span class="glance-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="8" cy="12" r="5"/><circle cx="16" cy="12" r="5"/><path d="M12 8.2v7.6"/></svg></span>
+            <strong>ไซโทไคนิน<span class="glance-en">Cytokinin</span></strong>
+            <p>แบ่งเซลล์ / ชะลอความแก่</p>
+          </a>
+          <a class="glance-card" href="#/ethylene">
+            <span class="glance-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="8.5" cy="12" r="2.6"/><circle cx="15.5" cy="12" r="2.6"/><path d="M11.1 10.9h1.8M11.1 13.1h1.8"/><path d="M4 6.5c1-1 2-1 3 0M17 19c1-1 2-1 3 0"/></svg></span>
+            <strong>เอทิลีน<span class="glance-en">Ethylene</span></strong>
+            <p>ผลไม้สุก / การร่วงของใบ</p>
+          </a>
+          <a class="glance-card" href="#/aba">
+            <span class="glance-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3s5.5 5.4 5.5 9.4A5.5 5.5 0 0 1 12 18a5.5 5.5 0 0 1-5.5-5.6C6.5 8.4 12 3 12 3Z"/><path d="M4 21h16"/></svg></span>
+            <strong>กรดแอบไซซิก<span class="glance-en">ABA</span></strong>
+            <p>ปิดปากใบ / พักตัว</p>
+          </a>
+        </div>
+      </section>
+
+      <section class="home-section" aria-labelledby="pathHeading">
+        <p class="eyebrow">Get Started</p>
+        <h2 id="pathHeading">เส้นทางการเรียนรู้</h2>
+        <p class="view-sub">เริ่มต้นทำความเข้าใจฮอร์โมนพืชทีละขั้นตอน</p>
+        <div class="path-grid">
+          <a class="path-step" href="#/diagram">
+            <span class="path-num">01</span>
+            <strong>สำรวจ</strong>
+            <p>ดูตำแหน่งและบทบาทของฮอร์โมนบนต้นพืช</p>
+          </a>
+          <a class="path-step" href="#/hormones">
+            <span class="path-num">02</span>
+            <strong>เรียนรู้</strong>
+            <p>ทำความรู้จักฮอร์โมนทั้ง 5 ชนิด</p>
+          </a>
+          <a class="path-step" href="#/lab">
+            <span class="path-num">03</span>
+            <strong>ทดลอง</strong>
+            <p>ทดลองปรับปัจจัยและดูผลจากแบบจำลอง</p>
+          </a>
+          <a class="path-step" href="#/quiz">
+            <span class="path-num">04</span>
+            <strong>ทดสอบ</strong>
+            <p>ตรวจสอบความเข้าใจด้วยแบบทดสอบ</p>
+          </a>
+        </div>
+      </section>
+
+      <section class="home-section" aria-labelledby="teamHeading">
+        <p class="eyebrow">Project Team</p>
+        <h2 id="teamHeading">ผู้จัดทำ</h2>
+        <p class="view-sub">เว็บไซต์สื่อการเรียนรู้นี้จัดทำโดยสมาชิกกลุ่ม 6 คน</p>
+        <div class="team-strip" id="teamStrip"></div>
+        <a class="hero-cta hero-cta--ghost" href="#/team">ดูหน้าผู้จัดทำ</a>
+      </section>
+    </div>
+  </div>
+
+  <!-- DIAGRAM: interactive plant diagram -->
+  <div class="view" id="view-diagram">
+    <div class="wrap">
+      <header class="view-head">
+        <p class="eyebrow">Interactive</p>
+        <h2>ผังตำแหน่งฮอร์โมนบนต้นพืช</h2>
+        <p class="view-sub">แตะตำแหน่งบนต้นพืชด้านล่างเพื่อดูว่าฮอร์โมนชนิดใดทำงานอยู่บริเวณนั้น</p>
+      </header>
+      <section class="diagram-section">
+        <div class="plant-figure" id="plantFigure">
+            <svg class="plant-svg" viewBox="0 0 300 420" aria-hidden="true" focusable="false">
+              <defs>
+                <radialGradient id="fruitShade" cx="34%" cy="30%" r="75%">
+                  <stop offset="0%" stop-color="#fff" stop-opacity=".55"/>
+                  <stop offset="48%" stop-color="#fff" stop-opacity="0"/>
+                  <stop offset="100%" stop-color="#000" stop-opacity=".22"/>
+                </radialGradient>
+              </defs>
+              <rect class="soil" x="14" y="260" width="272" height="148" rx="16"/>
+              <line class="ground" x1="14" y1="260" x2="286" y2="260"/>
+              <path class="root" pathLength="1" style="animation-delay:0ms;animation-duration:550ms" d="M150,258 C150,296 118,300 96,338"/>
+              <path class="root" pathLength="1" style="animation-delay:70ms;animation-duration:550ms" d="M150,258 L150,380"/>
+              <path class="root" pathLength="1" style="animation-delay:140ms;animation-duration:550ms" d="M150,258 C150,296 182,300 204,338"/>
+              <circle class="root-tip" style="animation-delay:480ms" cx="96" cy="338" r="5"/>
+              <circle class="root-tip" style="animation-delay:550ms" cx="150" cy="380" r="5"/>
+              <circle class="root-tip" style="animation-delay:620ms" cx="204" cy="338" r="5"/>
+              <line class="trunk" pathLength="1" style="animation-delay:60ms;animation-duration:700ms" x1="150" y1="258" x2="150" y2="52"/>
+              <path class="branch" pathLength="1" style="animation-delay:430ms;animation-duration:420ms" d="M150,200 C128,190 108,166 96,142"/>
+              <path class="branch" pathLength="1" style="animation-delay:500ms;animation-duration:420ms" d="M150,182 C174,170 194,160 205,150"/>
+              <g transform="translate(90,134) rotate(-38)"><ellipse class="leaf" style="animation-delay:830ms" cx="17" cy="0" rx="17" ry="9"/></g>
+              <g transform="translate(210,144) rotate(35)"><ellipse class="leaf" style="animation-delay:900ms" cx="17" cy="0" rx="17" ry="9"/></g>
+              <g transform="translate(138,58) rotate(-18)"><ellipse class="leaf" style="animation-delay:740ms" cx="15" cy="0" rx="15" ry="8"/></g>
+              <g transform="translate(163,58) rotate(18)"><ellipse class="leaf" style="animation-delay:790ms" cx="15" cy="0" rx="15" ry="8"/></g>
+              <g transform="translate(150,42) rotate(0)"><ellipse class="leaf" style="animation-delay:840ms" cx="13" cy="0" rx="13" ry="7"/></g>
+              <path class="fruit-stem" pathLength="1" style="animation-delay:950ms;animation-duration:280ms" d="M220,138 Q236,140 244,147"/>
+              <path class="fruit-calyx" style="animation-delay:1600ms" d="M247,143v-4"/>
+              <circle class="fruit" style="animation-delay:1200ms" cx="247" cy="152" r="9"/>
+              <circle class="fruit-shade" style="animation-delay:1200ms" cx="247" cy="152" r="9" fill="url(#fruitShade)"/>
+            </svg>
+            <div class="p-markers" id="plantMarkers"></div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- GRID: all hormones -->
+  <div class="view" id="view-grid">
+    <div class="wrap">
+      <header class="view-head">
+        <p class="eyebrow">Overview</p>
+        <h2>ฮอร์โมนพืชทั้ง 5 ชนิด</h2>
+        <p class="view-sub">เลือกการ์ดเพื่อดูแหล่งที่สร้าง บทบาททางสรีรวิทยา และการใช้ประโยชน์ทางการเกษตรแบบเจาะลึก</p>
+      </header>
+      <div class="filter-bar" id="filterBar" role="group" aria-label="กรองตามกลุ่ม"></div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </div>
+
+  <!-- COMPARE -->
+  <div class="view" id="view-compare">
+    <div class="wrap">
+      <header class="view-head">
+        <p class="eyebrow">Overview</p>
+        <h2>ตารางเปรียบเทียบฮอร์โมนทั้ง 5 ชนิด</h2>
+        <p class="view-sub">สรุปกลุ่ม แหล่งสร้างหลัก หน้าที่หลัก และการใช้ประโยชน์ เทียบเคียงกันในหน้าเดียว</p>
+      </header>
+      <div class="table-scroll">
+        <table class="compare-table" id="compareTable"></table>
+      </div>
+    </div>
+  </div>
+
+  <!-- LAB: interactive auxin dose-response -->
+  <div class="view" id="view-lab">
+    <div class="wrap">
+      <header class="view-head">
+        <p class="eyebrow">Interactive Lab</p>
+        <h2>ห้องทดลอง: ความเข้มข้นออกซินกับการเจริญ</h2>
+        <p class="view-sub">เลื่อนตัวเลื่อนเพื่อปรับความเข้มข้นออกซิน (IAA) แล้วสังเกตว่า “ยอด” และ “ราก” ตอบสนองต่างกันอย่างไร — กราฟนี้เป็นแบบจำลองเชิงแนวคิดเพื่อประกอบการเรียนรู้ ไม่ใช่ข้อมูลจากการทดลองจริง</p>
+      </header>
+      <section class="lab-section">
+        <div class="lab-panel">
+          <div class="lab-chart-wrap">
+            <svg class="lab-chart" id="labChart" viewBox="0 0 320 190" aria-hidden="true"></svg>
+            <div class="lab-legend">
+              <span class="lab-legend-item"><i class="dot shoot"></i> การเจริญของยอด</span>
+              <span class="lab-legend-item"><i class="dot root"></i> การเจริญของราก</span>
+            </div>
+          </div>
+          <div class="lab-controls">
+            <label class="lab-slider-label" for="labSlider">ความเข้มข้นออกซินที่ให้ <strong id="labConcVal">30</strong> หน่วย</label>
+            <input type="range" min="0" max="100" value="30" id="labSlider" class="lab-slider" aria-label="ความเข้มข้นออกซิน">
+            <div class="lab-readouts" id="labReadouts"></div>
+            <div class="lab-insight" id="labInsight"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- QUIZ -->
+  <div class="view" id="view-quiz">
+    <div class="wrap">
+      <header class="view-head">
+        <p class="eyebrow">Self Check</p>
+        <h2>แบบทดสอบความเข้าใจ</h2>
+        <p class="view-sub">ทบทวนความเข้าใจเรื่องฮอร์โมนพืชด้วยคำถาม 8 ข้อ พร้อมเฉลยและคำอธิบายทันที</p>
+      </header>
+      <div class="quiz-wrap">
+        <div class="quiz-card" id="quizCard"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TEAM: ผู้จัดทำ -->
+  <div class="view" id="view-team">
+    <div class="wrap">
+      <header class="view-head">
+        <p class="eyebrow">Project Team</p>
+        <h2>ผู้จัดทำ</h2>
+        <p class="view-sub">รายชื่อสมาชิกกลุ่มผู้จัดทำเว็บไซต์นำเสนอเรื่องฮอร์โมนพืช</p>
+      </header>
+      <section class="team-section">
+        <!-- แก้ข้อมูลหัวงานได้ที่บล็อกนี้ (เพิ่มระดับชั้น / ครูผู้สอน ได้โดยเพิ่ม <div><dt>..</dt><dd>..</dd></div>) -->
+        <dl class="project-meta">
+          <div><dt>รายวิชา</dt><dd>ชีววิทยา</dd></div>
+          <div><dt>เรื่องที่นำเสนอ</dt><dd>ฮอร์โมนพืช (Plant Hormones)</dd></div>
+          <div><dt>จำนวนสมาชิก</dt><dd>6 คน</dd></div>
+        </dl>
+
+        <div class="team-grid" id="teamGrid"></div>
+
+        <div class="ref-block">
+          <p class="eyebrow">References</p>
+          <h3>แหล่งอ้างอิงและอ่านเพิ่มเติม</h3>
+          <p class="view-sub">ปรับรายการนี้ให้ตรงกับแหล่งที่กลุ่มใช้จริงก่อนส่งงาน</p>
+          <ul class="ref-list">
+            <li><strong>สถาบันส่งเสริมการสอนวิทยาศาสตร์และเทคโนโลยี (สสวท.)</strong> — หนังสือเรียนรายวิชาเพิ่มเติมวิทยาศาสตร์ ชีววิทยา, บทการตอบสนองและฮอร์โมนพืช</li>
+            <li><strong>Taiz, L. &amp; Zeiger, E.</strong> — <em>Plant Physiology and Development</em>, Sinauer Associates</li>
+            <li><strong>Urry, L. A. et al.</strong> — <em>Campbell Biology</em>, บท Plant Responses to Internal and External Signals, Pearson</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- DETAIL -->
+  <div class="view" id="view-detail">
+    <div class="wrap">
+      <div class="detail-inner" id="detail-inner"></div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p><strong>ฮอร์โมนพืช 5 ชนิดหลัก</strong> · สื่อการเรียนรู้ชีววิทยา<br>จัดทำโดยสมาชิกกลุ่ม 6 คน</p>
+    <nav class="footer-links" aria-label="ลิงก์ท้ายหน้า">
+      <a href="#/hormones">ฮอร์โมนทั้งหมด</a>
+      <a href="#/compare">ตารางเปรียบเทียบ</a>
+      <a href="#/quiz">แบบทดสอบ</a>
+      <a href="#/team">ผู้จัดทำ</a>
+    </nav>
+  </div>
+</footer>
+
+<div class="plant-popup-scrim" id="plantPopupScrim" hidden></div>
+<div class="plant-popup" id="plantPopup" role="dialog" aria-hidden="true">
+  <button class="plant-popup-close" id="plantPopupClose" type="button" aria-label="ปิด">
+    <svg viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg>
+  </button>
+  <div id="plantPopupBody"></div>
+</div>
+
+<script>
+const ICONS = {
+  auxin:'<svg viewBox="0 0 24 24"><path d="M12 21V8"/><path d="M12 12c0-3.3 2.5-6 5.5-6.5C17.5 9 15 12 12 12Z"/><path d="M12 16c-2.6 0-4.8-2-5-4.6 2.6-.2 4.8 1.7 5 4.6Z"/><path d="M9 4.5 12 2l3 2.5"/></svg>',
+  gibberellin:'<svg viewBox="0 0 24 24"><path d="M12 22V3"/><path d="M9 3h6"/><path d="M8.5 8.5h7"/><path d="M8.5 14h7"/><path d="M5 19.5c1.8-.6 3.1-1.7 4-3.3"/><path d="M19 19.5c-1.8-.6-3.1-1.7-4-3.3"/></svg>',
+  cytokinin:'<svg viewBox="0 0 24 24"><circle cx="8" cy="12" r="5"/><circle cx="16" cy="12" r="5"/><path d="M12 8.2v7.6"/></svg>',
+  aba:'<svg viewBox="0 0 24 24"><path d="M12 3s5.5 5.4 5.5 9.4A5.5 5.5 0 0 1 12 18a5.5 5.5 0 0 1-5.5-5.6C6.5 8.4 12 3 12 3Z"/><path d="M4 21h16"/></svg>',
+  ethylene:'<svg viewBox="0 0 24 24"><circle cx="8.5" cy="12" r="2.6"/><circle cx="15.5" cy="12" r="2.6"/><path d="M11.1 10.9h1.8M11.1 13.1h1.8"/><path d="M4 6.5c1-1 2-1 3 0M17 19c1-1 2-1 3 0"/></svg>'
+};
+
+const HORMONES = [
+  {
+    id:'auxin', th:'ออกซิน', en:'Auxin (IAA)', type:'promoter',
+    tag:'ควบคุมการยืดตัวของเซลล์และการเอนเข้าหาแสง',
+    lede:'ฮอร์โมนพืชชนิดแรกที่ถูกค้นพบ ชนิดที่พบมากที่สุดในธรรมชาติคือ IAA (indole-3-acetic acid) เด่นเรื่องการควบคุมทิศทางการเจริญของต้นพืช',
+    compareSource:'ปลายยอด, ใบอ่อน, เมล็ด/ผลอ่อน',
+    compareRole:'ยืดตัวเซลล์ยอด, เอนหาแสง, ข่มตาข้าง',
+    compareUse:'เร่งรากกิ่งปักชำ (NAA/IBA), กำจัดวัชพืช (2,4-D)',
+    source:[
+      '<b>เนื้อเยื่อเจริญปลายยอด</b> (apical meristem) เป็นแหล่งสร้างหลัก',
+      '<b>ใบอ่อนและตาอ่อน</b> ที่กำลังขยายตัว',
+      '<b>เมล็ดและผลอ่อน</b> ที่กำลังพัฒนา',
+      '<b>ปลายราก</b> สร้างได้ในปริมาณน้อย',
+      'ลำเลียงแบบมีทิศทาง (polar transport) จากยอดลงสู่โคน ผ่านเซลล์พาเรงคิมาข้างท่อลำเลียง'
+    ],
+    role:[
+      'กระตุ้นการ<b>ยืดตัวของเซลล์</b>บริเวณใต้ปลายยอด ทำให้ลำต้นสูงขึ้น',
+      'ควบคุมการ<b>เอนเข้าหาแสง</b> (phototropism) โดยสะสมด้านที่ไม่ได้รับแสงมากกว่า และการตอบสนองต่อ<b>แรงโน้มถ่วง</b> (gravitropism)',
+      'ทำให้เกิดการ<b>ข่มตาข้าง</b> (apical dominance) ตายอดยับยั้งการเจริญของตาข้าง',
+      'กระตุ้นการเกิด<b>รากแขนงและรากพิเศษ</b>',
+      '<b>ชะลอการหลุดร่วง</b>ของใบ ดอก และผล',
+      'ความเข้มข้นสูงเกินไปกลับ<b>ยับยั้ง</b>การเจริญของราก — รากไวต่อออกซินมากกว่าลำต้น'
+    ],
+    use:[
+      '<b>NAA / IBA</b> ใช้จุ่มหรือทาโคนกิ่ง เร่งการออกรากของกิ่งปักชำและกิ่งตอน',
+      '<b>2,4-D</b> ความเข้มข้นสูง ใช้เป็นสารกำจัดวัชพืชใบกว้างในนาข้าวและแปลงหญ้า',
+      'พ่นป้องกัน<b>ผลร่วงก่อนเก็บเกี่ยว</b>ในส้ม แอปเปิล และมะม่วง',
+      'ชักนำ<b>ผลไม่มีเมล็ด</b> (parthenocarpy) ในมะเขือเทศและแตงโม',
+      'ใช้ร่วมกับไซโทไคนินในการ<b>เพาะเลี้ยงเนื้อเยื่อ</b> เพื่อควบคุมการเกิดรากหรือยอด'
+    ],
+    note:'สัดส่วน <b>ออกซิน : ไซโทไคนิน</b> ในอาหารเพาะเลี้ยงเนื้อเยื่อเป็นตัวกำหนดว่าเนื้อเยื่อจะพัฒนาไปเป็นราก (ออกซินสูง) หรือยอด (ไซโทไคนินสูง)'
+  },
+  {
+    id:'gibberellin', th:'จิบเบอเรลลิน', en:'Gibberellin (GA)', type:'promoter',
+    tag:'ยืดปล้องให้ต้นสูง กระตุ้นการงอกและการออกดอก',
+    lede:'ค้นพบจากเชื้อรา Gibberella fujikuroi ที่ทำให้ต้นข้าวเป็นโรค “ข้าวตัวผู้” สูงผิดปกติ ปัจจุบันพบมากกว่า 100 ชนิด โดย GA₃ ถูกใช้ทางการค้ามากที่สุด',
+    compareSource:'ยอดอ่อน, เอ็มบริโอในเมล็ด, ปลายราก',
+    compareRole:'ยืดข้อปล้อง, ทำลายการพักตัว, กระตุ้นออกดอก',
+    compareUse:'ยืดช่อองุ่นไร้เมล็ด, เร่งงอกเมล็ดพันธุ์',
+    source:[
+      '<b>ยอดอ่อนและใบอ่อน</b> ที่กำลังเจริญ',
+      '<b>เอ็มบริโอในเมล็ด</b> ที่กำลังงอก',
+      '<b>ปลายราก</b> และ<b>ผลอ่อน</b>',
+      'ลำเลียงได้ทั้งทางไซเล็มและโฟลเอ็ม ไม่จำกัดทิศทางเหมือนออกซิน'
+    ],
+    role:[
+      'กระตุ้นการ<b>ยืดตัวของปล้อง</b> ทำให้ต้นสูงเด่นชัด โดยเฉพาะพืชพันธุ์เตี้ย',
+      '<b>ทำลายการพักตัว</b> (dormancy) ของเมล็ดและตา ทำให้งอกได้เร็วขึ้น',
+      'กระตุ้นชั้น aleurone ของเมล็ดธัญพืชให้สร้างเอนไซม์ <b>α-amylase</b> ย่อยแป้งในเอนโดสเปิร์มไปเลี้ยงเอ็มบริโอ',
+      'กระตุ้นการ<b>ออกดอก</b>ในพืชวันยาวและพืชที่ต้องการอากาศเย็น',
+      'ส่งเสริมการ<b>เจริญของผล</b>และการขยายขนาดผล',
+      'มีผลต่อการ<b>กำหนดเพศดอก</b> ในพืชบางชนิด เช่น แตงกวา'
+    ],
+    use:[
+      'พ่น <b>GA₃</b> ในองุ่นไร้เมล็ด เพื่อยืดช่อผลและเพิ่มขนาดผล',
+      'เร่งการงอกของเมล็ดพันธุ์ และใช้ในกระบวนการ<b>ทำมอลต์</b>ของอุตสาหกรรมเบียร์',
+      'กระตุ้นการ<b>ออกดอกนอกฤดู</b> และยืดช่อดอกไม้ประดับ',
+      'เพิ่มผลผลิตพืชที่กินลำต้นและใบ เช่น อ้อย ผักกินใบ คื่นช่าย',
+      'ในทางกลับกัน สาร<b>ชะลอการเจริญเติบโต</b> เช่น พาโคลบิวทราโซล ยับยั้งการสร้าง GA เพื่อทำมะม่วงนอกฤดูและทำให้ไม้กระถางทรงพุ่มเตี้ย'
+    ],
+    note:'GA และ ABA ทำงาน<b>ตรงข้ามกัน</b>ในการควบคุมการพักตัวของเมล็ด — GA กระตุ้นการงอก ส่วน ABA รักษาการพักตัวเอาไว้'
+  },
+  {
+    id:'cytokinin', th:'ไซโทไคนิน', en:'Cytokinin', type:'promoter',
+    tag:'กระตุ้นการแบ่งเซลล์และชะลอการแก่ของใบ',
+    lede:'กลุ่มฮอร์โมนอนุพันธ์ของอะดีนีน เช่น zeatin และ kinetin ชื่อของมันมาจาก cytokinesis คือการแบ่งไซโทพลาซึมของเซลล์',
+    compareSource:'ปลายราก, เมล็ด/ผลอ่อน, เนื้อเยื่อเจริญ',
+    compareRole:'แบ่งเซลล์, แตกตาข้าง, ชะลอใบแก่',
+    compareUse:'เพาะเลี้ยงเนื้อเยื่อ (BA/kinetin), ยืดอายุผักหลังเก็บเกี่ยว',
+    source:[
+      '<b>ปลายราก</b> เป็นแหล่งสร้างหลัก แล้วลำเลียงขึ้นสู่ยอดทางไซเล็ม',
+      '<b>เมล็ดและผลอ่อน</b> ที่กำลังพัฒนา',
+      '<b>เนื้อเยื่อเจริญ</b> ที่มีการแบ่งเซลล์สูง',
+      'พบมากในน้ำมะพร้าวอ่อน ซึ่งเป็นเอนโดสเปิร์มเหลว'
+    ],
+    role:[
+      'กระตุ้นการ<b>แบ่งเซลล์</b>ในเนื้อเยื่อเจริญ ร่วมกับออกซิน',
+      'กระตุ้นการ<b>เจริญของตาข้าง</b> ซึ่งเป็นการต้านฤทธิ์การข่มตาข้างของออกซิน',
+      '<b>ชะลอการแก่ชรา</b> (senescence) โดยชะลอการสลายตัวของคลอโรฟิลล์และโปรตีน ทำให้ใบเขียวนาน',
+      'ส่งเสริมการ<b>เปิดปากใบ</b> และการขยายตัวของเซลล์ใบ',
+      'ชักนำการสร้าง<b>คลอโรพลาสต์</b>และการเปลี่ยนสภาพของเนื้อเยื่อ',
+      'ดึงสารอาหารมาสะสมบริเวณที่มีความเข้มข้นสูง (nutrient sink)'
+    ],
+    use:[
+      'ใช้ <b>BA / kinetin</b> ในการเพาะเลี้ยงเนื้อเยื่อ เพื่อชักนำให้เกิดยอดจำนวนมากในการขยายพันธุ์กล้วยไม้และกล้วย',
+      '<b>ยืดอายุหลังการเก็บเกี่ยว</b>ของผักใบเขียว บรอกโคลี และไม้ตัดดอก',
+      'พ่นเพื่อ<b>เพิ่มขนาดผล</b>ในองุ่นและแอปเปิล',
+      'กระตุ้นการ<b>แตกตาข้าง</b> ทำให้ไม้ประดับมีทรงพุ่มแน่นสวยงาม'
+    ],
+    note:'ใบที่ถูกตัดออกจากต้นจะเหลืองเร็ว เพราะขาดไซโทไคนินที่ลำเลียงมาจากราก — จึงใช้อธิบายบทบาทของรากต่อความสดของยอดได้ชัดเจน'
+  },
+  {
+    id:'aba', th:'กรดแอบไซซิก', en:'Abscisic acid (ABA)', type:'stress',
+    tag:'ฮอร์โมนแห่งความเครียด ปิดปากใบและรักษาการพักตัว',
+    lede:'ฮอร์โมนยับยั้งการเจริญเติบโต มีบทบาทสำคัญยิ่งเมื่อพืชเผชิญภาวะแล้ง เค็ม หรือหนาวเย็น จึงถูกเรียกว่า “stress hormone”',
+    compareSource:'ใบแก่, ราก (เมื่อขาดน้ำ), เมล็ด/ผล',
+    compareRole:'ปิดปากใบ, รักษาการพักตัว, ทนความเครียด',
+    compareUse:'ลดเหี่ยวก่อนย้ายกล้า, คุมการพักตัวเมล็ดพันธุ์',
+    source:[
+      '<b>ใบแก่</b> สร้างในคลอโรพลาสต์จากสารตั้งต้นกลุ่มแคโรทีนอยด์',
+      '<b>ราก</b> สร้างเพิ่มขึ้นทันทีเมื่อดินขาดน้ำ แล้วส่งสัญญาณขึ้นไปยังใบ',
+      '<b>เมล็ดและผล</b> ที่กำลังสุกหรือกำลังเข้าสู่ระยะพักตัว',
+      '<b>หมวกราก</b> (root cap) ลำเลียงได้ทั้งทางไซเล็มและโฟลเอ็ม'
+    ],
+    role:[
+      'กระตุ้นการ<b>ปิดปากใบ</b>อย่างรวดเร็วเมื่อขาดน้ำ ลดการคายน้ำ',
+      '<b>รักษาการพักตัว</b>ของเมล็ดและตา ป้องกันการงอกก่อนเวลาอันควร',
+      '<b>ยับยั้งการเจริญเติบโต</b>ของต้น เป็นฤทธิ์ตรงข้ามกับออกซินและจิบเบอเรลลิน',
+      'ส่งเสริมการ<b>สะสมอาหารและโปรตีน</b>ในเมล็ดระยะพัฒนา และช่วยให้เมล็ดทนต่อการสูญเสียน้ำ',
+      'เพิ่ม<b>ความทนทานต่อความเครียด</b> ทั้งความแล้ง ความเค็ม และอุณหภูมิต่ำ',
+      'เกี่ยวข้องกับการ<b>หลุดร่วง</b>ของใบและผลในพืชบางชนิด'
+    ],
+    use:[
+      'พ่นก่อน<b>ย้ายกล้าปลูก</b> เพื่อลดการคายน้ำและลดอาการเหี่ยวเฉา',
+      'ใช้เพิ่ม<b>ความทนแล้ง</b>ให้พืชไร่ในพื้นที่ที่น้ำจำกัด',
+      'ควบคุมการพักตัวของ<b>เมล็ดพันธุ์</b>เพื่อการเก็บรักษา และป้องกันการงอกคาต้นในข้าวและข้าวสาลี',
+      'กระตุ้นการ<b>สร้างสี</b>ของผิวผลในองุ่นแดง',
+      '<b>ยืดอายุไม้กระถาง</b>ระหว่างการขนส่งและวางจำหน่าย'
+    ],
+    note:'แม้ชื่อจะมาจาก abscission (การหลุดร่วง) แต่ปัจจุบันพบว่าฮอร์โมนที่ควบคุมการร่วงโดยตรงคือ <b>เอทิลีน</b> มากกว่า ABA'
+  },
+  {
+    id:'ethylene', th:'เอทิลีน', en:'Ethylene (C₂H₄)', type:'stress',
+    tag:'แก๊สเร่งการสุกของผลและการหลุดร่วงของใบ',
+    lede:'ฮอร์โมนพืชชนิดเดียวที่อยู่ในสถานะแก๊ส จึงแพร่กระจายระหว่างเซลล์และระหว่างผลไม้ที่วางอยู่ใกล้กันได้',
+    compareSource:'เนื้อเยื่อเกือบทุกส่วน, ผลสุก (climacteric)',
+    compareRole:'เร่งสุก, หลุดร่วง, เสื่อมสภาพ',
+    compareUse:'บ่มผลไม้, เอทีฟอนเร่งน้ำยาง/บังคับสับปะรดออกดอก',
+    source:[
+      'สร้างได้จาก<b>เนื้อเยื่อเกือบทุกส่วน</b> โดยเฉพาะส่วนที่กำลังเสื่อมสภาพ',
+      '<b>ผลที่กำลังสุก</b> ในกลุ่ม climacteric เช่น กล้วย มะม่วง มะเขือเทศ',
+      '<b>ใบแก่ ดอกที่กำลังโรย และบริเวณข้อ</b>',
+      '<b>เนื้อเยื่อที่บาดเจ็บ</b> หรืออยู่ในภาวะเครียด เช่น น้ำท่วมขังและถูกกดทับ'
+    ],
+    role:[
+      '<b>เร่งการสุก</b>ของผล โดยกระตุ้นเอนไซม์ย่อยผนังเซลล์ ทำให้ผลนิ่ม หวาน และเปลี่ยนสี',
+      'เร่งการ<b>หลุดร่วง</b>ของใบ ดอก และผล โดยกระตุ้นการสร้างชั้น abscission',
+      'กระตุ้นการ<b>เสื่อมสภาพของดอก</b>และการแก่ชราของเนื้อเยื่อ',
+      'ทำให้ต้นกล้าที่ชนสิ่งกีดขวางแสดง <b>triple response</b> คือ ลำต้นสั้นลง อ้วนขึ้น และเอนในแนวนอน',
+      'กระตุ้นการ<b>ออกดอกในสับปะรด</b>และพืชวงศ์เดียวกัน',
+      'เป็นสัญญาณตอบสนองต่อ<b>ความเครียด</b>และการเข้าทำลายของเชื้อโรค'
+    ],
+    use:[
+      '<b>บ่มผลไม้</b>ด้วยแก๊สเอทิลีนในห้องบ่ม หรือใช้ถ่านแก๊ส/ใบขี้เหล็กในภูมิปัญญาดั้งเดิม',
+      '<b>เอทีฟอน (ethephon)</b> สารที่ปล่อยเอทิลีน ใช้เร่งสุกในมะเขือเทศและเร่งการเปลี่ยนสีผิวส้ม',
+      '<b>บังคับสับปะรดออกดอก</b>พร้อมกันทั้งแปลง เพื่อวางแผนเก็บเกี่ยว',
+      'เร่งการ<b>ไหลของน้ำยางพารา</b> ด้วยการทาเอทีฟอนบริเวณหน้ากรีด',
+      'ทำให้ผล<b>ร่วงพร้อมกัน</b>เพื่อเก็บเกี่ยวด้วยเครื่องจักรในเชอร์รีและวอลนัต',
+      'ในทางกลับกัน ใช้ <b>KMnO₄</b> ดูดซับเอทิลีนในห้องเย็น เพื่อยืดอายุการเก็บรักษาผักผลไม้'
+    ],
+    note:'“ผลไม้เน่าหนึ่งผลทำให้ทั้งเข่งเสีย” อธิบายได้ด้วยเอทิลีน — ผลที่สุกจัดปล่อยแก๊สออกมาเร่งให้ผลข้างเคียงสุกตามกันไป'
+  }
+];
+
+const ARROW = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13"/><path d="m12.5 6 6 6-6 6"/></svg>';
+const BACK_ARROW = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H6"/><path d="m11.5 6-6 6 6 6"/></svg>';
+const CHECK_ICON = '<svg viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7"/></svg>';
+const CROSS_ICON = '<svg viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg>';
+const SUN_ICON = '<path d="M12 2.5v3M12 18.5v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2.5 12h3M18.5 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/><circle cx="12" cy="12" r="4.2"/>';
+const MOON_ICON = '<path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z"/>';
+
+const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ── theme toggle ──────────────────────────────────── */
+const themeBtn = document.getElementById('themeBtn');
+const themeIcon = document.getElementById('themeIcon');
+function currentIsDark(){
+  const attr = document.documentElement.getAttribute('data-theme');
+  if(attr === 'dark') return true;
+  if(attr === 'light') return false;
+  return window.matchMedia('(prefers-color-scheme: dark)').matches;
+}
+function paintThemeIcon(){
+  themeIcon.innerHTML = currentIsDark() ? SUN_ICON : MOON_ICON;
+}
+themeBtn.addEventListener('click', ()=>{
+  const next = currentIsDark() ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  try{ localStorage.setItem('ph-theme', next); }catch(e){}
+  paintThemeIcon();
+});
+paintThemeIcon();
+
+/* ── hormone grid (view: #/hormones) ──────────────────── */
+const grid = document.getElementById('grid');
+const filterBar = document.getElementById('filterBar');
+const FILTERS = [
+  {id:'all', label:'ทั้งหมด', count: HORMONES.length},
+  {id:'promoter', label:'กระตุ้นการเจริญเติบโต', count: HORMONES.filter(h=>h.type==='promoter').length},
+  {id:'stress', label:'ยับยั้ง / ตอบสนองความเครียด', count: HORMONES.filter(h=>h.type==='stress').length}
+];
+filterBar.innerHTML = FILTERS.map((f,i)=>`
+  <button class="chip${i===0?' is-active':''}" data-filter="${f.id}">${f.label} <span>(${f.count})</span></button>`).join('');
+
+grid.innerHTML = HORMONES.map((h,i)=>`
+  <button class="card" data-id="${h.id}" data-type="${h.type}" style="animation-delay:${reduce?0:80+i*70}ms">
+    <span class="icon" aria-hidden="true">${ICONS[h.id]}</span>
+    <h3>${h.th}<span class="en">${h.en}</span></h3>
+    <p>${h.tag}</p>
+    <span class="go">ดูรายละเอียด <span class="go-badge" aria-hidden="true">${ARROW}</span></span>
+  </button>`).join('');
+
+grid.addEventListener('click', e=>{
+  const card = e.target.closest('.card');
+  if(card) location.hash = '#/' + card.dataset.id;
+});
+filterBar.addEventListener('click', e=>{
+  const chip = e.target.closest('.chip');
+  if(!chip) return;
+  filterBar.querySelectorAll('.chip').forEach(c=>c.classList.toggle('is-active', c===chip));
+  const f = chip.dataset.filter;
+  grid.querySelectorAll('.card').forEach(c=>{
+    c.classList.toggle('is-hidden', f !== 'all' && c.dataset.type !== f);
+  });
+});
+
+/* ── interactive plant diagram (home) ─────────────────── */
+const PARTS = [
+  {
+    id:'shoot', th:'ปลายยอด', en:'Shoot Tip · Apical Meristem', x:50, y:9,
+    intro:'เนื้อเยื่อเจริญปลายยอด เป็นศูนย์กลางการสังเคราะห์ฮอร์โมนที่ส่งผลต่อทิศทางการเจริญและโครงสร้างทรงพุ่มทั้งต้น',
+    hormones:[
+      {id:'auxin', note:'สังเคราะห์หลักที่ปลายยอด ควบคุมการยืดตัวของเซลล์ส่วนยอด ควบคุมการเอนเข้าหาแสง และยับยั้งการเจริญของตาข้าง (apical dominance)'},
+      {id:'gibberellin', note:'สังเคราะห์ที่เนื้อเยื่อเจริญปลายยอด เร่งการยืดข้อปล้องให้ลำต้นเจริญสูงขึ้นในแนวตั้ง'},
+      {id:'cytokinin', note:'ลำเลียงขึ้นมาจากราก กระตุ้นการแบ่งเซลล์และการแตกตาข้างบริเวณยอด'}
+    ]
+  },
+  {
+    id:'leaf', th:'ใบและปากใบ', en:'Leaf & Stomata', x:31.7, y:33.3,
+    intro:'ใบเป็นทั้งแหล่งสร้างฮอร์โมนกลุ่มความเครียดและจุดควบคุมการแลกเปลี่ยนก๊าซผ่านปากใบ',
+    hormones:[
+      {id:'cytokinin', note:'ชะลอการแก่ชรา (senescence) ทำให้คลอโรฟิลล์สลายตัวช้าลง ใบจึงเขียวสดอยู่ได้นาน'},
+      {id:'aba', note:'สร้างในคลอโรพลาสต์ของใบแก่ กระตุ้นการปิดปากใบทันทีเมื่อขาดน้ำเพื่อลดการคายน้ำ'},
+      {id:'ethylene', note:'เร่งการเหลืองและการหลุดร่วงของใบแก่ โดยกระตุ้นการสร้างชั้น abscission'}
+    ]
+  },
+  {
+    id:'stem', th:'ลำต้น', en:'Stem', x:50, y:54.8,
+    intro:'บริเวณปล้องและข้อเป็นจุดตอบสนองหลักต่อฮอร์โมนกลุ่มกระตุ้นการยืดตัวของเซลล์',
+    hormones:[
+      {id:'auxin', note:'ลำเลียงแบบมีทิศทางจากยอดลงสู่โคน กระตุ้นการยืดตัวของเซลล์บริเวณใต้ปลายยอด'},
+      {id:'gibberellin', note:'กระตุ้นการยืดปล้องได้เด่นชัดที่สุดในบรรดาฮอร์โมนทั้งหมด ทำให้ต้นสูงขึ้นอย่างรวดเร็ว'}
+    ]
+  },
+  {
+    id:'flower', th:'ดอกและผล', en:'Flower & Fruit', x:68.3, y:35.7,
+    intro:'ดอกและผลเป็นทั้งแหล่งสร้างและเป้าหมายของฮอร์โมนหลายชนิดตลอดวงจรการพัฒนา ตั้งแต่ติดผลจนสุก',
+    hormones:[
+      {id:'auxin', note:'ชักนำการติดผลและทำให้เกิดผลไม่มีเมล็ด (parthenocarpy) ในพืชบางชนิด'},
+      {id:'gibberellin', note:'ขยายขนาดผลและยืดช่อผล เช่น ทำให้องุ่นไร้เมล็ดพวงยาวขึ้น'},
+      {id:'ethylene', note:'เร่งการสุกของผล climacteric และเร่งการหลุดร่วงของดอกและผลที่โรยแล้ว'},
+      {id:'aba', note:'ควบคุมการสะสมอาหารสำรองในเมล็ดระหว่างการพัฒนา และช่วยให้เมล็ดทนต่อการสูญเสียน้ำ'}
+    ]
+  },
+  {
+    id:'root', th:'ปลายราก', en:'Root Tip', x:50, y:90.5,
+    intro:'ปลายรากเป็นแหล่งสร้างไซโทไคนินหลักของพืช และเป็นจุดแรกที่รับสัญญาณความเครียดจากสภาพดิน',
+    hormones:[
+      {id:'cytokinin', note:'สังเคราะห์หลักที่ปลายราก แล้วลำเลียงขึ้นไปเลี้ยงส่วนยอดทางไซเล็ม'},
+      {id:'aba', note:'สร้างเพิ่มขึ้นทันทีเมื่อดินขาดน้ำ แล้วส่งสัญญาณขึ้นไปสั่งปิดปากใบที่ใบ'},
+      {id:'auxin', note:'รากไวต่อออกซินมากกว่าลำต้นมาก ความเข้มข้นที่กระตุ้นลำต้นกลับยับยั้งการเจริญของราก'}
+    ]
+  }
+];
+
+const plantMarkers = document.getElementById('plantMarkers');
+const plantPopup = document.getElementById('plantPopup');
+const plantPopupBody = document.getElementById('plantPopupBody');
+const plantPopupScrim = document.getElementById('plantPopupScrim');
+const plantPopupClose = document.getElementById('plantPopupClose');
+
+plantMarkers.innerHTML = PARTS.map((p,i)=>`
+  <button class="p-marker" data-part="${p.id}" style="--x:${p.x}%;--y:${p.y}%" aria-pressed="false">
+    <span class="p-dot">${i+1}</span>
+    <span class="p-tag">${i+1}. ${p.th}</span>
+  </button>`).join('');
+
+function renderPopupBody(part){
+  plantPopupBody.innerHTML = `
+    <p class="pp-eyebrow">บริเวณที่ ${PARTS.indexOf(part)+1} · ${part.en}</p>
+    <h3 class="pp-title">${part.th}</h3>
+    <p class="pp-intro">${part.intro}</p>
+    <div class="pp-list">
+      ${part.hormones.map(h=>{
+        const H = HORMONES.find(x=>x.id===h.id);
+        return `<button class="pp-item" data-goto="${H.id}">
+          <span class="pp-item-icon" aria-hidden="true">${ICONS[H.id]}</span>
+          <span class="pp-item-name">${H.th}<small>${H.en}</small></span>
+          <span class="pp-item-go">ดูรายละเอียด ${ARROW}</span>
+        </button>`;
+      }).join('')}
+    </div>`;
+  plantPopupBody.querySelectorAll('[data-goto]').forEach(b=>{
+    b.addEventListener('click', ()=> location.hash = '#/' + b.dataset.goto);
+  });
+}
+
+function positionPopup(markerEl){
+  const rect = markerEl.getBoundingClientRect();
+  const popRect = plantPopup.getBoundingClientRect();
+  const margin = 14, headerGap = 76;
+  const spaceBelow = window.innerHeight - rect.bottom;
+  const spaceAbove = rect.top - headerGap;
+  let top, arrow;
+  if(spaceBelow >= popRect.height + 20 || spaceBelow > spaceAbove){
+    top = rect.bottom + 12; arrow = 'top';
+  }else{
+    top = rect.top - popRect.height - 12; arrow = 'bottom';
+  }
+  top = Math.max(headerGap, Math.min(top, window.innerHeight - popRect.height - margin));
+  let left = rect.left + rect.width/2 - popRect.width/2;
+  left = Math.max(margin, Math.min(left, window.innerWidth - popRect.width - margin));
+  // page-relative coordinates (not viewport-relative): position:absolute means
+  // this now scrolls glued to the document, in exact lockstep with the content.
+  plantPopup.style.top = (top + window.scrollY) + 'px';
+  plantPopup.style.left = (left + window.scrollX) + 'px';
+  plantPopup.dataset.arrow = arrow;
+  const arrowLeft = Math.max(16, Math.min(rect.left + rect.width/2 - left, popRect.width - 16));
+  plantPopup.style.setProperty('--arrow-left', arrowLeft + 'px');
+}
+
+let activePartId = null;
+function openPopup(part, markerEl){
+  renderPopupBody(part);
+  plantPopup.classList.add('is-open');
+  plantPopup.setAttribute('aria-hidden', 'false');
+  plantPopupScrim.hidden = false;
+  positionPopup(markerEl);
+  requestAnimationFrame(()=> positionPopup(markerEl));
+}
+function closePopup(){
+  plantPopup.classList.remove('is-open');
+  plantPopup.setAttribute('aria-hidden', 'true');
+  plantPopupScrim.hidden = true;
+  plantMarkers.querySelectorAll('.p-marker.is-active').forEach(m=>{
+    m.classList.remove('is-active'); m.setAttribute('aria-pressed', 'false');
+  });
+  activePartId = null;
+}
+function selectPart(id, markerEl){
+  if(id === activePartId){ closePopup(); return; }
+  activePartId = id;
+  plantMarkers.querySelectorAll('.p-marker').forEach(m=>{
+    const isActive = m.dataset.part === id;
+    m.classList.toggle('is-active', isActive);
+    m.setAttribute('aria-pressed', isActive);
+  });
+  openPopup(PARTS.find(p=>p.id===id), markerEl);
+}
+
+plantMarkers.addEventListener('click', e=>{
+  const marker = e.target.closest('.p-marker');
+  if(marker) selectPart(marker.dataset.part, marker);
+});
+plantPopupClose.addEventListener('click', closePopup);
+plantPopupScrim.addEventListener('click', closePopup);
+document.addEventListener('keydown', e=>{ if(e.key === 'Escape') closePopup(); });
+window.addEventListener('resize', ()=>{
+  const activeMarker = plantMarkers.querySelector('.p-marker.is-active');
+  if(activeMarker) positionPopup(activeMarker);
+});
+
+/* ── comparison table (view: #/compare) ───────────────── */
+const compareTable = document.getElementById('compareTable');
+compareTable.innerHTML = `
+  <thead><tr>
+    <th>ฮอร์โมน</th><th>กลุ่ม</th><th>แหล่งสร้างหลัก</th><th>หน้าที่หลัก</th><th>การใช้ประโยชน์</th><th></th>
+  </tr></thead>
+  <tbody>
+    ${HORMONES.map(h=>`
+      <tr>
+        <td><div class="ct-name">
+          <span class="icon" aria-hidden="true">${ICONS[h.id]}</span>
+          <span><strong>${h.th}</strong><small>${h.en}</small></span>
+        </div></td>
+        <td data-label="กลุ่ม"><span class="pill ${h.type}">${h.type==='promoter'?'กระตุ้น':'ยับยั้ง/เครียด'}</span></td>
+        <td class="ct-desc" data-label="แหล่งสร้างหลัก">${h.compareSource}</td>
+        <td class="ct-desc" data-label="หน้าที่หลัก">${h.compareRole}</td>
+        <td class="ct-desc" data-label="การใช้ประโยชน์">${h.compareUse}</td>
+        <td><button class="ct-link" data-goto="${h.id}">ดู ${ARROW}</button></td>
+      </tr>`).join('')}
+  </tbody>`;
+compareTable.querySelectorAll('[data-goto]').forEach(b=>{
+  b.addEventListener('click', ()=> location.hash = '#/' + b.dataset.goto);
+});
+
+/* ── auxin lab (view: #/lab) ───────────────────────────── */
+const PLOT = {left:34, right:310, top:14, bottom:162};
+function labX(x){ return PLOT.left + (x/100) * (PLOT.right-PLOT.left); }
+function labY(v){
+  const clamped = Math.max(0, Math.min(3, v));
+  return PLOT.top + (1 - clamped/3) * (PLOT.bottom-PLOT.top);
+}
+function shootRel(x){
+  const t = x/28;
+  const f = t*Math.exp(1-t);
+  return 1 + 1.6*f - 1.0*Math.pow(x/100, 2);
+}
+function rootRel(x){
+  const t = x/6;
+  const f = t*Math.exp(1-t);
+  const v = 1 + 0.5*f - 1.3*Math.pow(x/100, 1.3);
+  return Math.max(0, v);
+}
+function buildLabPath(fn){
+  let d = '';
+  for(let x=0; x<=100; x+=2){
+    d += (x===0 ? 'M' : 'L') + labX(x).toFixed(1) + ',' + labY(fn(x)).toFixed(1) + ' ';
+  }
+  return d;
+}
+const labChart = document.getElementById('labChart');
+if(labChart){
+  const baselineY = labY(1);
+  labChart.innerHTML = `
+    <line class="lab-axis" x1="${PLOT.left}" y1="${PLOT.bottom}" x2="${PLOT.right}" y2="${PLOT.bottom}"/>
+    <line class="lab-baseline" x1="${PLOT.left}" y1="${baselineY}" x2="${PLOT.right}" y2="${baselineY}"/>
+    <text class="lab-tick" x="${PLOT.left}" y="${baselineY-6}" font-size="8.5">ระดับควบคุม</text>
+    ${[0,25,50,75,100].map(x=>`<text class="lab-tick" x="${labX(x)}" y="${PLOT.bottom+16}" font-size="8.5" text-anchor="middle">${x}</text>`).join('')}
+    <text class="lab-tick" x="${(PLOT.left+PLOT.right)/2}" y="184" font-size="8.5" text-anchor="middle">ความเข้มข้นออกซิน (หน่วยสัมพัทธ์)</text>
+    <path class="lab-shoot-line" d="${buildLabPath(shootRel)}"/>
+    <path class="lab-root-line" d="${buildLabPath(rootRel)}"/>
+    <line class="lab-marker-line" id="labMarkerLine" x1="0" y1="${PLOT.top}" x2="0" y2="${PLOT.bottom}"/>
+    <circle class="lab-dot-shoot" id="labShootDot" r="5"/>
+    <circle class="lab-dot-root" id="labRootDot" r="5"/>
+  `;
+}
+const labSlider = document.getElementById('labSlider');
+const labConcVal = document.getElementById('labConcVal');
+const labReadouts = document.getElementById('labReadouts');
+const labInsight = document.getElementById('labInsight');
+function updateLab(xVal){
+  const shoot = shootRel(xVal), root = rootRel(xVal);
+  const px = labX(xVal);
+  labConcVal.textContent = xVal;
+  document.getElementById('labMarkerLine').setAttribute('x1', px);
+  document.getElementById('labMarkerLine').setAttribute('x2', px);
+  const shootDot = document.getElementById('labShootDot');
+  shootDot.setAttribute('cx', px); shootDot.setAttribute('cy', labY(shoot));
+  const rootDot = document.getElementById('labRootDot');
+  rootDot.setAttribute('cx', px); rootDot.setAttribute('cy', labY(root));
+
+  const shootPct = Math.round(shoot*100), rootPct = Math.round(root*100);
+  const shootTrend = shoot>1.05 ? 'เจริญเพิ่มขึ้นจากระดับควบคุม' : shoot<0.95 ? 'ถูกยับยั้ง' : 'ใกล้เคียงระดับควบคุม';
+  const rootTrend = root>1.05 ? 'เจริญเพิ่มขึ้นจากระดับควบคุม' : root<0.4 ? 'ถูกยับยั้งอย่างรุนแรง' : root<0.95 ? 'ถูกยับยั้ง' : 'ใกล้เคียงระดับควบคุม';
+  labReadouts.innerHTML = `
+    <div class="lab-stat"><p class="lab-stat-label">ยอด · Shoot</p><div class="lab-stat-value">${shootPct}<small>% เทียบระดับควบคุม</small></div><p>${shootTrend}</p></div>
+    <div class="lab-stat is-root"><p class="lab-stat-label">ราก · Root</p><div class="lab-stat-value">${rootPct}<small>% เทียบระดับควบคุม</small></div><p>${rootTrend}</p></div>`;
+
+  let insight;
+  if(xVal < 10) insight = 'ความเข้มข้นต่ำมาก: กระตุ้นทั้งยอดและรากเล็กน้อย ยังไม่เห็นความแตกต่างชัดเจนระหว่างสองส่วน';
+  else if(xVal < 35) insight = 'ช่วงนี้คือ<b>ความเข้มข้นที่เหมาะสมสำหรับยอด</b> แต่สูงเกินระดับที่รากทนได้แล้ว รากจึงเริ่มถูกยับยั้งขณะที่ยอดยังเจริญดี — อธิบายได้ว่าทำไมสาร NAA/IBA ที่ใช้เร่งรากกิ่งปักชำจึงต้องใช้ใน<b>ความเข้มข้นต่ำมาก</b>เท่านั้น';
+  else if(xVal < 70) insight = 'ยอดเจริญถึงจุดสูงสุดแล้วและเริ่มลดลง ส่วนรากถูกยับยั้งมากขึ้นต่อเนื่อง สะท้อนหลักที่ว่า<b>รากไวต่อออกซินมากกว่าลำต้นมาก</b>';
+  else insight = 'ความเข้มข้นสูงมาก: ยับยั้งการเจริญทั้งยอดและราก — หลักการเดียวกันนี้ถูกนำไปใช้ผลิต<b>สารกำจัดวัชพืช 2,4-D</b> ที่ใช้ออกซินสังเคราะห์ความเข้มข้นสูงทำลายพืชใบกว้าง';
+  labInsight.innerHTML = insight;
+}
+if(labSlider){
+  labSlider.addEventListener('input', e=> updateLab(Number(e.target.value)));
+  updateLab(Number(labSlider.value));
+}
+
+/* ── quiz (view: #/quiz) ───────────────────────────────── */
+const QUIZ = [
+  {q:'ฮอร์โมนใดสังเคราะห์หลักที่ปลายราก แล้วลำเลียงขึ้นไปเลี้ยงส่วนยอด กระตุ้นการแบ่งเซลล์และแตกตาข้าง?',
+   options:['ออกซิน (Auxin)','ไซโทไคนิน (Cytokinin)','กรดแอบไซซิก (ABA)','เอทิลีน (Ethylene)'], correct:1, hormone:'cytokinin',
+   explain:'<b>ไซโทไคนิน</b> สังเคราะห์หลักที่ปลายราก แล้วลำเลียงขึ้นทางไซเล็มไปกระตุ้นการแบ่งเซลล์และการแตกตาข้างที่ส่วนยอด'},
+  {q:'เมื่อพืชขาดน้ำ ฮอร์โมนใดกระตุ้นให้เซลล์คุมปิดปากใบเพื่อลดการคายน้ำ?',
+   options:['จิบเบอเรลลิน (GA)','ออกซิน (Auxin)','กรดแอบไซซิก (ABA)','ไซโทไคนิน (Cytokinin)'], correct:2, hormone:'aba',
+   explain:'<b>กรดแอบไซซิก (ABA)</b> สร้างเพิ่มขึ้นที่รากและใบทันทีเมื่อขาดน้ำ ส่งสัญญาณให้เซลล์คุมปิดปากใบอย่างรวดเร็ว'},
+  {q:'การจุ่มโคนกิ่งปักชำด้วยสาร NAA หรือ IBA เพื่อเร่งการออกราก ใช้หลักการทำงานของฮอร์โมนใด?',
+   options:['จิบเบอเรลลิน (GA)','ออกซิน (Auxin)','กรดแอบไซซิก (ABA)','เอทิลีน (Ethylene)'], correct:1, hormone:'auxin',
+   explain:'<b>ออกซิน</b> กระตุ้นการเกิดรากแขนงและรากพิเศษ สาร NAA และ IBA เป็นออกซินสังเคราะห์ที่นิยมใช้เร่งรากกิ่งปักชำ'},
+  {q:'การพ่น GA₃ ในองุ่นไร้เมล็ดมีผลอย่างไรต่อพวงองุ่น?',
+   options:['ทำให้ผลร่วงเร็วขึ้น','ยืดช่อผลและเพิ่มขนาดผล','เร่งให้ผลสุกพร้อมกัน','ทำให้ใบเหลืองช้าลง'], correct:1, hormone:'gibberellin',
+   explain:'<b>จิบเบอเรลลิน</b> กระตุ้นการยืดตัวของเซลล์ ทำให้ช่อองุ่นยืดโปร่งและผลมีขนาดใหญ่ขึ้น'},
+  {q:'เพราะเหตุใดผลไม้เน่าหนึ่งผลในเข่งเดียวกันจึงมักทำให้ผลข้างเคียงสุกและเน่าตามไปอย่างรวดเร็ว?',
+   options:['ออกซินซึมผ่านผิวผลที่สัมผัสกัน','เอทิลีนเป็นแก๊สที่แพร่กระจายไปกระตุ้นผลข้างเคียง','ไซโทไคนินลดลงพร้อมกันทั้งเข่ง','กรดแอบไซซิกสะสมในอากาศรอบเข่ง'], correct:1, hormone:'ethylene',
+   explain:'<b>เอทิลีน</b> เป็นฮอร์โมนพืชชนิดเดียวที่อยู่ในสถานะแก๊ส จึงแพร่กระจายไปกระตุ้นการสุกของผลที่อยู่ใกล้เคียงได้'},
+  {q:'ในการเพาะเลี้ยงเนื้อเยื่อพืช สัดส่วนฮอร์โมนแบบใดที่ชักนำให้เนื้อเยื่อพัฒนาเป็น "ราก" มากกว่า "ยอด"?',
+   options:['ออกซินสูงกว่าไซโทไคนิน','ไซโทไคนินสูงกว่าออกซิน','จิบเบอเรลลินสูงกว่า ABA','เอทิลีนสูงกว่าออกซิน'], correct:0, hormone:'auxin',
+   explain:'เมื่อสัดส่วน <b>ออกซิน : ไซโทไคนิน</b> สูง เนื้อเยื่อจะถูกชักนำให้แบ่งเซลล์และพัฒนาเป็นรากเป็นหลัก ตรงข้ามกับสัดส่วนไซโทไคนินสูงที่ชักนำให้เกิดยอด'},
+  {q:'ฮอร์โมนใดทำงานตรงข้ามกับจิบเบอเรลลินโดยตรงในการควบคุมการพักตัวของเมล็ด?',
+   options:['ออกซิน (Auxin)','เอทิลีน (Ethylene)','กรดแอบไซซิก (ABA)','ไซโทไคนิน (Cytokinin)'], correct:2, hormone:'aba',
+   explain:'<b>GA และ ABA</b> ทำงานตรงข้ามกันในการควบคุมการพักตัวของเมล็ด — GA กระตุ้นการงอก ส่วน ABA รักษาการพักตัวเอาไว้'},
+  {q:'การทาสารเอทีฟอน (ethephon) บริเวณหน้ากรีดยางพารา มีจุดประสงค์เพื่ออะไร?',
+   options:['เร่งการไหลของน้ำยาง','เร่งการออกรากใหม่','ป้องกันใบยางร่วง','เพิ่มความหวานของน้ำยาง'], correct:0, hormone:'ethylene',
+   explain:'เอทีฟอนปล่อย<b>เอทิลีน</b>ออกมา ซึ่งช่วยเร่งการไหลของน้ำยางพาราบริเวณหน้ากรีด เป็นเทคนิคที่ใช้กันทั่วไปในสวนยาง'}
+];
+
+const quizCard = document.getElementById('quizCard');
+let quizIndex = 0, quizScore = 0, quizAnswered = false;
+
+function burstConfetti(container){
+  const colors = ['var(--accent)','var(--fruit)','var(--ink)','var(--trunk)'];
+  for(let i=0;i<26;i++){
+    const el = document.createElement('span');
+    el.className = 'confetti-piece';
+    el.style.left = (Math.random()*100)+'%';
+    el.style.background = colors[i%colors.length];
+    el.style.animationDelay = (Math.random()*0.3)+'s';
+    el.style.setProperty('--rot', (Math.random()*360)+'deg');
+    container.appendChild(el);
+    el.addEventListener('animationend', ()=> el.remove());
+  }
+}
+
+function renderQuiz(){
+  if(quizIndex >= QUIZ.length){
+    const pct = Math.round((quizScore/QUIZ.length)*100);
+    const isPerfect = pct === 100;
+    const msg = pct >= 88 ? 'ยอดเยี่ยมมาก เข้าใจฮอร์โมนพืชแตกฉาน' : pct >= 63 ? 'ผ่านเกณฑ์ดี ใกล้เข้าใจครบแล้ว' : 'ลองย้อนไปทบทวนการ์ดฮอร์โมนอีกครั้ง';
+    quizCard.innerHTML = `
+      <div class="quiz-result" id="quizResult">
+        ${isPerfect ? `<div class="quiz-perfect-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 4h8v4a4 4 0 0 1-4 4 4 4 0 0 1-4-4V4Z"/><path d="M8 5H5a2 2 0 0 0 0 4h1M16 5h3a2 2 0 0 1 0 4h-1"/><path d="M12 12v4"/><path d="M9 16h6l1 4H8l1-4Z"/></svg></div>` : ''}
+        <p class="panel-label" style="margin-bottom:0">ผลการทดสอบ</p>
+        <div class="score">${quizScore}<span> / ${QUIZ.length}</span></div>
+        <p>${msg}</p>
+        <div class="quiz-result-actions">
+          <button class="quiz-retry-btn" id="quizRetry">ทำแบบทดสอบอีกครั้ง</button>
+          <a class="quiz-review-btn" href="#/hormones">ทบทวนการ์ดฮอร์โมน</a>
+        </div>
+      </div>`;
+    document.getElementById('quizRetry').addEventListener('click', ()=>{
+      quizIndex = 0; quizScore = 0; quizAnswered = false; renderQuiz();
+    });
+    if(isPerfect && !reduce) burstConfetti(document.getElementById('quizResult'));
+    return;
+  }
+  quizAnswered = false;
+  const item = QUIZ[quizIndex];
+  quizCard.innerHTML = `
+    <div class="quiz-progress-track"><div class="quiz-progress-bar" style="width:${(quizIndex/QUIZ.length)*100}%"></div></div>
+    <div class="quiz-meta"><span>ข้อที่ ${quizIndex+1} จาก ${QUIZ.length}</span><span>คะแนน ${quizScore}</span></div>
+    <p class="quiz-question">${item.q}</p>
+    <div class="quiz-options">
+      ${item.options.map((opt,i)=>`
+        <button class="quiz-opt" data-i="${i}"><span class="opt-mark" aria-hidden="true"></span>${opt}</button>`).join('')}
+    </div>
+    <div id="quizExplainSlot"></div>`;
+  quizCard.querySelectorAll('.quiz-opt').forEach(btn=>{
+    btn.addEventListener('click', ()=> answerQuiz(Number(btn.dataset.i)));
+  });
+}
+
+function answerQuiz(choice){
+  if(quizAnswered) return;
+  quizAnswered = true;
+  const item = QUIZ[quizIndex];
+  const correct = choice === item.correct;
+  if(correct) quizScore++;
+  quizCard.querySelectorAll('.quiz-opt').forEach((btn,i)=>{
+    btn.disabled = true;
+    if(i === item.correct){
+      btn.classList.add('is-correct');
+      btn.querySelector('.opt-mark').innerHTML = CHECK_ICON;
+    }else if(i === choice){
+      btn.classList.add('is-wrong');
+      btn.querySelector('.opt-mark').innerHTML = CROSS_ICON;
+    }
+  });
+  document.getElementById('quizExplainSlot').innerHTML = `
+    <div class="quiz-explain">${item.explain}</div>
+    <div class="quiz-next-row">
+      <button class="quiz-next-btn" id="quizNext">${quizIndex+1 < QUIZ.length ? 'คำถามถัดไป' : 'ดูผลคะแนน'} ${ARROW}</button>
+    </div>`;
+  document.getElementById('quizNext').addEventListener('click', ()=>{
+    quizIndex++;
+    renderQuiz();
+  });
+}
+renderQuiz();
+
+/* ── detail view ───────────────────────────────────────── */
+const viewDetail = document.getElementById('view-detail');
+const detailInner = document.getElementById('detail-inner');
+
+function block(label, title, items){
+  return `<section class="block">
+    <p class="block-label">${label}</p>
+    <h3>${title}</h3>
+    <ul class="points">${items.map(t=>`<li>${t}</li>`).join('')}</ul>
+  </section>`;
+}
+
+function renderDetail(h){
+  const i = HORMONES.indexOf(h);
+  const prev = HORMONES[(i-1+HORMONES.length)%HORMONES.length];
+  const next = HORMONES[(i+1)%HORMONES.length];
+  detailInner.innerHTML = `
+    <button class="back" id="backBtn">${BACK_ARROW} ย้อนกลับ</button>
+    <div class="detail-head">
+      <span class="icon" aria-hidden="true">${ICONS[h.id]}</span>
+      <div>
+        <h1 class="detail-title">${h.th}</h1>
+        <p class="detail-en">${h.en}</p>
+      </div>
+    </div>
+    <p class="detail-lede">${h.lede}</p>
+    <hr class="rule">
+    ${block('Source','แหล่งที่สร้างในพืช',h.source)}
+    ${block('Function','หน้าที่และบทบาททางสรีรวิทยา',h.role)}
+    ${block('Application','การนำไปใช้ประโยชน์ทางการเกษตร',h.use)}
+    <div class="note">${h.note}</div>
+    <nav class="nextnav">
+      <button data-goto="${prev.id}">← ${prev.th}</button>
+      <button data-goto="${next.id}">${next.th} →</button>
+    </nav>`;
+  detailInner.querySelector('#backBtn').addEventListener('click', ()=>{
+    if(history.length>1) history.back(); else location.hash='';
+  });
+  detailInner.querySelectorAll('[data-goto]').forEach(b=>{
+    b.addEventListener('click', ()=> location.hash = '#/' + b.dataset.goto);
+  });
+}
+
+/* ── team / ผู้จัดทำ (view: #/team) ───────────────────── */
+/* แก้ไขรายชื่อสมาชิกได้ที่ MEMBERS — หน้าแรกและหน้าผู้จัดทำอ่านจากชุดข้อมูลเดียวกัน */
+const MEMBERS = [
+  {name:'นายเปรมศักดิ์ ขาวทอง', no:1},
+  {name:'นายณกรณ์ ว่องวงศกร', no:4},
+  {name:'นายดุลยวัต จันทร์แจ้ง', no:5},
+  {name:'นายธนภัทร ชุมแก้ว', no:6},
+  {name:'นายธนภูมิ แก้ววิลาศ', no:7},
+  {name:'นายรณกร เกื้อเสนาะ', no:18}
+];
+
+document.getElementById('teamGrid').innerHTML = MEMBERS.map((m,i)=>`
+  <div class="member-card">
+    <span class="member-no" aria-hidden="true">${String(i+1).padStart(2,'0')}</span>
+    <span>
+      <strong class="member-name">${m.name}</strong>
+      <span class="member-role">เลขที่ ${m.no}</span>
+    </span>
+  </div>`).join('');
+
+document.getElementById('teamStrip').innerHTML = MEMBERS.map(m=>`
+  <span class="team-chip">${m.name} <i>เลขที่ ${m.no}</i></span>`).join('');
+
+/* ── router ────────────────────────────────────────────── */
+const VIEWS = {
+  home: document.getElementById('view-home'),
+  diagram: document.getElementById('view-diagram'),
+  grid: document.getElementById('view-grid'),
+  compare: document.getElementById('view-compare'),
+  lab: document.getElementById('view-lab'),
+  quiz: document.getElementById('view-quiz'),
+  team: document.getElementById('view-team'),
+  detail: viewDetail
+};
+const TITLES = {
+  home:'ฮอร์โมนพืช · Plant Hormones',
+  diagram:'ผังต้นพืช · ฮอร์โมนพืช',
+  grid:'ฮอร์โมนทั้งหมด · ฮอร์โมนพืช',
+  compare:'ตารางเปรียบเทียบ · ฮอร์โมนพืช',
+  lab:'ห้องทดลอง · ฮอร์โมนพืช',
+  quiz:'แบบทดสอบ · ฮอร์โมนพืช',
+  team:'ผู้จัดทำ · ฮอร์โมนพืช'
+};
+let activeViewKey = 'home';
+
+function setActiveNav(key){
+  document.querySelectorAll('.nav-btn').forEach(btn=>{
+    const on = btn.dataset.nav === key;
+    btn.classList.toggle('is-active', on);
+    if(on) btn.setAttribute('aria-current','page');
+    else btn.removeAttribute('aria-current');
+  });
+}
+
+function replayPlantGrowth(){
+  const svg = document.querySelector('#view-diagram .plant-svg');
+  if(!svg) return;
+  svg.querySelectorAll('.root,.trunk,.branch,.fruit-stem,.root-tip,.fruit-calyx,.leaf,.fruit,.fruit-shade').forEach(el=>{
+    el.replaceWith(el.cloneNode(true));
+  });
+}
+
+function swapTo(key){
+  if(key === activeViewKey) return;
+  const from = VIEWS[activeViewKey];
+  const to = VIEWS[key];
+  from.classList.add('is-leaving');
+  from.classList.remove('is-active');
+  const delay = reduce ? 0 : 220;
+  window.setTimeout(()=>{
+    from.classList.remove('is-leaving');
+    to.classList.add('is-active');
+    if(key === 'diagram') replayPlantGrowth();
+    if(document.body.contains(document.activeElement) && document.activeElement !== document.body){
+      to.setAttribute('tabindex','-1');
+      to.focus({preventScroll:true});
+    }
+  }, delay);
+  activeViewKey = key;
+}
+
+function route(){
+  closePopup();
+  const seg = (location.hash.match(/^#\/?(.*)$/)||[])[1] || '';
+  let key;
+  if(seg === '' || seg === 'home') key = 'home';
+  else if(seg === 'diagram') key = 'diagram';
+  else if(seg === 'hormones') key = 'grid';
+  else if(seg === 'compare') key = 'compare';
+  else if(seg === 'lab') key = 'lab';
+  else if(seg === 'quiz') key = 'quiz';
+  else if(seg === 'team') key = 'team';
+  else {
+    const h = HORMONES.find(x=>x.id===seg);
+    if(h){ key='detail'; renderDetail(h); }
+    else key='home';
+  }
+  document.title = TITLES[key] || TITLES.home;
+  setActiveNav(key === 'detail' ? null : key);
+  swapTo(key);
+  window.scrollTo({top:0, behavior: reduce ? 'auto' : 'smooth'});
+}
+
+window.addEventListener('hashchange', route);
+route();
+</script>
+</body>
+</html>
